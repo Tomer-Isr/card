@@ -1,0 +1,2062 @@
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#1A1C1B">
+<title>Визитка Iukhvidov</title>
+<meta name="description" content="Tomer Iukhvidov — сайты, боты, системы и автоматизации для малого бизнеса в Израиле.">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Tomer Iukhvidov — websites, bots, systems">
+<meta property="og:description" content="Сайты, боты и системы для малого бизнеса в Израиле. אתרים, בוטים ומערכות לעסקים קטנים.">
+<meta property="og:image" content="https://card.tomerisr.org.il/og.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:url" content="https://card.tomerisr.org.il/">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 48 48'%3E%3Crect width='48' height='48' rx='9' fill='%231A1C1B'/%3E%3Cg transform='translate(6 6) scale(.75)'%3E%3Crect x='6' y='6' width='16' height='16' rx='2.5' fill='%23E6E4DE'/%3E%3Crect x='26' y='6' width='16' height='16' rx='2.5' fill='%23E6E4DE'/%3E%3Crect x='6' y='26' width='16' height='16' rx='2.5' fill='%23E6E4DE'/%3E%3Crect x='28.5' y='27.5' width='16' height='16' rx='2.5' fill='none' stroke='%235FB39A' stroke-width='3.5' transform='rotate(14 36.5 35.5)'/%3E%3C/g%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600;700&family=IBM+Plex+Sans+Hebrew:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap">
+<style>
+  :root {
+    color-scheme: dark;
+    --bg: #1A1C1B;
+    --surface: #212423;
+    --card: #272B29;
+    --text: #E6E4DE;
+    --muted: #A3AAA6;
+    --dim: #838B87;   /* 4.9 on --bg: small print must pass AA */
+    --acc: #5FB39A;   /* patina — the brand accent (kit 26.09) */
+    --acc-glow: rgba(95, 179, 154, .28);
+    --sys: #A39BD6;   /* lilac — the system at work: decoding, typing, the core; it cools down to plain text once done */
+    --line: rgba(236, 232, 223, .09);
+    --wa: #25D366;
+    --ease: cubic-bezier(0.16, 1, 0.3, 1);
+    --f-display: "IBM Plex Sans", "Segoe UI", system-ui, sans-serif;
+    --f-mono: "IBM Plex Mono", ui-monospace, Consolas, monospace;
+    --f-he: "IBM Plex Sans Hebrew", "Arial Hebrew", "Segoe UI", sans-serif;
+    --gutter: max(16px, 4vw);
+  }
+  html, body { background: var(--bg); color: var(--text); }
+  body {
+    font-family: var(--f-display);
+    font-size: 16px;
+    line-height: 1.55;
+    -webkit-font-smoothing: antialiased;
+    background:
+      radial-gradient(120% 70% at 50% -12%, #232a27 0%, rgba(26,28,27,0) 58%),
+      var(--bg);
+    background-attachment: fixed;
+    overflow-x: hidden;
+  }
+  html[lang="he"] body { font-family: var(--f-he); }
+
+  #gl {
+    position: fixed; inset: 0; width: 100%; height: 100%;
+    display: block; touch-action: pan-y; z-index: 0;
+  }
+
+  /* ── header ─────────────────────────────── */
+  .bar {
+    position: fixed; inset-inline: 0; top: 0; z-index: 10;
+    padding: calc(env(safe-area-inset-top, 0px) + 12px) var(--gutter) 12px;
+    display: flex; align-items: center; justify-content: space-between; gap: 12px;
+    background: linear-gradient(to bottom, var(--bg) 62%, rgba(26,28,27,0));
+    padding-bottom: 22px;
+  }
+  .brand { display: flex; align-items: center; gap: 8px; font-weight: 700; letter-spacing: -.01em; font-family: var(--f-display); font-size: 19px; direction: ltr; color: var(--text); text-decoration: none; }
+  .brand svg { width: 20px; height: 20px; flex: none; }
+  /* the surname: dotless ı + our dots — a ring (new) over the first, a patina dot (in place) over the second */
+  .wm { letter-spacing: -.03em; white-space: nowrap; }
+  .wm .i { position: relative; display: inline-block; }
+  .wm .i::after { content: ""; position: absolute; left: 50%; top: .2em; width: .21em; height: .21em; border-radius: 50%; transform: translateX(-50%); box-shadow: inset 0 0 0 .055em currentColor; }
+  .wm .i.done::after { background: var(--acc); box-shadow: none; }
+  .bar-r { display: flex; align-items: center; gap: 10px; }
+  .langs { display: flex; border: 1px solid var(--line); border-radius: 6px; padding: 2px; }
+  .langs button {
+    font: 500 11px/1 var(--f-mono); letter-spacing: .08em; color: var(--muted);
+    background: none; border: 0; padding: 7px 9px; border-radius: 6px; cursor: pointer; min-width: 40px; min-height: 36px;
+  }
+  .langs button[aria-pressed="true"] { color: var(--bg); background: var(--text); }
+  .write {
+    font: 600 13px/1 inherit; font-family: inherit; color: var(--bg); background: var(--acc);
+    border-radius: 6px; padding: 9px 14px; text-decoration: none; white-space: nowrap;
+  }
+  .progress { position: absolute; inset-inline: 0; bottom: 0; height: 1px; background: var(--line); }
+  .progress i { display: block; height: 100%; width: 0; background: var(--sys); transform-origin: left; }
+  html[dir="rtl"] .progress i { margin-inline-start: 0; }
+
+  /* ── story ─────────────────────────────── */
+  main { position: relative; z-index: 1; pointer-events: none; }
+  .beat {
+    box-sizing: border-box;   /* the height includes its own padding, or a "one screen" step is taller than the screen */
+    min-height: 100svh;
+    display: flex; flex-direction: column; justify-content: flex-end;
+    padding: 5.5rem var(--gutter) max(2.75rem, calc(env(safe-area-inset-bottom, 0px) + 2rem));
+  }
+  .beat[data-beat="0"] { min-height: 210svh; }
+  .beat[data-beat="1"] { min-height: 145svh; }   /* −15% (Томер, 26.09): chaos → system came too late */
+  .beat[data-beat="2"] { min-height: 150svh; }
+  .beat[data-beat="3"] { min-height: 106svh; }   /* −15% (Томер, 26.09): results → finale */
+  main { transition: opacity .6s var(--ease); }
+  html.rewinding main { opacity: 0; transition-duration: .35s; }
+  .copy { position: relative; isolation: isolate; max-width: 34rem; pointer-events: auto; }
+  .copy::before {
+    content: ""; position: absolute; z-index: -1;
+    inset: -4.5rem calc(var(--gutter) * -1) -3rem;
+    background: linear-gradient(to top, var(--bg) 55%, rgba(26,28,27,0));
+    pointer-events: none;
+  }
+  /* steps 0–3: the text stays put at the bottom and changes in place, the scene above stays clean */
+  .js .beat.pin .copy {
+    position: fixed; z-index: 2; inset-inline: var(--gutter);
+    bottom: max(2.5rem, calc(env(safe-area-inset-bottom, 0px) + 1.75rem));
+    opacity: var(--o, 0); visibility: var(--v, hidden); transform: translateY(var(--dy, 0px));
+  }
+  .kicker {
+    font: 500 12px/1.4 var(--f-mono); letter-spacing: .12em; text-transform: uppercase;
+    color: var(--muted); margin: 0 0 .9rem;
+  }
+  html[lang="he"] .kicker { letter-spacing: .04em; }
+  .kicker { text-wrap: balance; }
+  .kicker .kw { white-space: nowrap; unicode-bidi: isolate; }
+  .kicker .kc { display: inline-block; text-align: center; transition: color .6s; }
+  .kicker .kc.run { color: var(--sys); transition: none; }
+  h1, h2 {
+    font-weight: 700; letter-spacing: -.025em; line-height: 1.02; margin: 0 0 1rem;
+    text-wrap: balance;
+  }
+  h1 { font-size: clamp(2.1rem, 8.4vw, 4.1rem); }
+  h2 { font-size: clamp(1.85rem, 6.6vw, 3.2rem); }
+  @media (max-width: 859px) and (max-height: 720px) {
+    h1 { font-size: clamp(1.7rem, 7.4vw, 2.4rem); }
+    h2 { font-size: clamp(1.55rem, 6.4vw, 2.2rem); }
+    .copy p { font-size: .96rem; }
+  }
+  html[lang="he"] h1, html[lang="he"] h2 { letter-spacing: -.01em; line-height: 1.08; }
+  .copy p { color: var(--muted); font-size: 1.04rem; margin: 0 0 1rem; max-width: 30rem; text-wrap: pretty; }
+  .copy p b { color: var(--text); font-weight: 600; }
+  .unread {
+    display: inline-flex; align-items: center; gap: .55rem; margin-top: 1.3rem;
+    font: 500 12px/1 var(--f-mono); letter-spacing: .08em; text-transform: uppercase; color: var(--muted);
+  }
+  html[lang="he"] .unread { letter-spacing: .02em; }
+  .unread i { width: 8px; height: 8px; border-radius: 50%; background: var(--acc); animation: ping 1.8s var(--ease) infinite; }
+  .unread b { color: var(--text); font-weight: 500; font-variant-numeric: tabular-nums; min-width: 2ch; }
+  .caret { display: inline-block; width: .07em; height: .82em; margin-inline-start: .1em; vertical-align: -.06em; background: var(--sys); opacity: 0; transition: opacity .5s; }
+  .caret.on { opacity: 1; animation: caretBlink 1s steps(1) infinite; transition: none; }
+  @keyframes caretBlink { 50% { opacity: 0; } }
+  @keyframes ping { 0% { box-shadow: 0 0 0 0 rgba(95,179,154,.55) } 70%, 100% { box-shadow: 0 0 0 10px rgba(95,179,154,0) } }
+
+  /* words rise out of their own line */
+  .w { display: inline-block; white-space: nowrap; perspective: 700px; }
+  .ch { display: inline-block; transform-origin: 50% 85%; }
+  .pw { display: inline-block; }
+
+
+  .outs { list-style: none; margin: .4rem 0 1.2rem; padding: 0; display: grid; gap: 0; border-top: 1px solid var(--line); }
+  .outs li { display: grid; grid-template-columns: 7.5rem 1fr; gap: .9rem; padding: .7rem 0; border-bottom: 1px solid var(--line); align-items: baseline; }
+  .outs b { font-weight: 600; color: var(--text); }
+  .outs span { color: var(--muted); font-size: .96rem; }
+  .proof { font-size: .92rem !important; color: var(--text) !important; opacity: .82; }
+  .proof::before { content: "● "; color: var(--acc); font-size: .7em; vertical-align: .15em; }
+
+  .ctas { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin: 1.3rem 0 1rem; }
+  .btn {
+    display: flex; align-items: center; justify-content: center; gap: 8px;
+    min-height: 52px; padding: 0 16px; border-radius: 8px;
+    font: 600 15px/1.1 inherit; font-family: inherit; text-decoration: none; cursor: pointer;
+    border: 1px solid var(--line); background: var(--card); color: var(--text);
+    transition: transform .5s var(--ease), background .3s;
+  }
+  .btn:active { transform: scale(.97); }
+  .btn svg { width: 18px; height: 18px; flex: none; }
+  .btn.wa { grid-column: 1 / -1; background: var(--wa); color: #0b2415; border-color: transparent; font-size: 16px; min-height: 58px; }
+  /* Telegram in its own blue, like WhatsApp in its green (Tomer 28.09) */
+  .btn.tg { color: #2AABEE; border-color: rgba(42, 171, 238, .45); }
+  .btn.mail { background: none; border-color: rgba(163, 155, 214, .5); color: var(--sys); }   /* three ways to write, three colours: WhatsApp green, Telegram blue, mail in the system lilac (Tomer 28.09, 03.10) */
+  /* the number is a button too, under the three ways to write: one grid, no stray row (Tomer 03.10) */
+  .btn.call { grid-column: 1 / -1; }
+  .btn.call .num { font: 400 14px/1 var(--f-mono); color: var(--muted); direction: ltr; unicode-bidi: isolate; margin-inline-start: 4px; }
+  .site-link { font: 400 12px/1.5 var(--f-mono) !important; color: var(--dim) !important; margin: 1.1rem 0 0 !important; }
+  .site-link a { color: var(--muted); text-decoration: underline; text-decoration-color: rgba(163,155,214,.55); text-underline-offset: 3px; }
+  .note { font: 400 12px/1.5 var(--f-mono) !important; color: var(--dim) !important; margin-top: 1rem !important; }
+
+  :focus-visible { outline: 2px solid var(--sys); outline-offset: 3px; }
+  ::selection { background: rgba(163, 155, 214, .45); color: var(--text); }   /* a selection in a code editor */
+
+  /* an opened notification */
+  .sheet { position: fixed; inset: 0; z-index: 40; display: grid; place-items: center; padding: 16px; }
+  [hidden] { display: none !important; }   /* the page may be served without the artifact reset */
+  .sheet-bg { position: absolute; inset: 0; background: rgba(12, 11, 8, .64); backdrop-filter: blur(6px); -webkit-backdrop-filter: blur(6px); }
+  .sheet-card {
+    --app: #5FB39A;
+    position: relative; width: min(100%, 440px); border-radius: 26px; padding: 18px 18px 16px;
+    background: radial-gradient(120% 70% at 0% 0%, color-mix(in srgb, var(--app) 24%, transparent), transparent 62%), #2A2E2C;
+    border: 1px solid rgba(255, 248, 230, .1); box-shadow: 0 40px 90px rgba(0, 0, 0, .55); color: var(--text);
+  }
+  html[dir="rtl"] .sheet-card { background: radial-gradient(120% 70% at 100% 0%, color-mix(in srgb, var(--app) 24%, transparent), transparent 62%), #2A2E2C; }
+  .sheet-head { display: flex; align-items: center; gap: 10px; font: 500 12px/1 var(--f-mono); letter-spacing: .1em; text-transform: uppercase; color: #A3AAA6; }
+  .sheet-head img { width: 34px; height: 34px; border-radius: 9px; }
+  .sheet-head time { margin-inline-start: auto; letter-spacing: .04em; text-transform: none; }
+  .sheet-x { width: 44px; height: 44px; flex: none; border-radius: 8px; border: 1px solid var(--line); background: none; color: var(--text); font: 400 20px/1 var(--f-display); cursor: pointer; }
+  .sheet-from { font-weight: 600; font-size: 17px; margin: 16px 0 2px; }
+  .sheet-msg { color: #C9CFCB; font-size: 16px; margin: 0 0 16px; }
+  .sheet-reply { border-radius: 18px; padding: 14px 16px; background: rgba(163, 155, 214, .09); border: 1px solid rgba(163, 155, 214, .3); }
+  .sheet-reply small { display: block; font: 500 11px/1.2 var(--f-mono); letter-spacing: .12em; text-transform: uppercase; color: var(--sys); margin-bottom: 8px; }
+  html[lang="he"] .sheet-reply small { letter-spacing: .02em; }
+  .sheet-reply p { margin: 0; font-size: 16px; line-height: 1.5; min-height: 3em; }
+  .sheet-card.me .sheet-reply p { font-size: 19px; font-weight: 600; line-height: 1.35; }
+  .sheet-acts { display: flex; gap: 10px; margin-top: 14px; flex-wrap: wrap; }
+  .sheet-acts .btn { flex: 1 1 auto; min-height: 50px; }
+  .sheet-acts .go { background: var(--acc); color: var(--bg); border-color: transparent; }
+  .sheet-acts .go.wa { background: var(--wa); color: #0b2415; }
+
+  /* «next»: the fourth tile of the mark — outline, tilted, still flying; it lands straight on hover.
+     A press plays the story to its next moment at the pace it was made for (Tomer 27.09) */
+  .next {
+    position: fixed; z-index: 12; inset-inline-end: var(--gutter);
+    bottom: max(1.25rem, calc(env(safe-area-inset-bottom, 0px) + 1rem));
+    width: 48px; height: 48px; padding: 0; border: 0; background: none; cursor: pointer; color: var(--text);
+    display: grid; place-items: center; -webkit-tap-highlight-color: transparent;
+    transition: opacity .4s var(--ease), visibility 0s;
+  }
+  .next .tile {
+    width: 34px; height: 34px; border-radius: 7px; border: 2.5px solid var(--acc);
+    display: grid; place-items: center; transform: rotate(14deg) translate(3px, 3px);
+    transition: transform .5s var(--ease), background .3s; animation: nextBob 2.6s ease-in-out infinite, nextPing 2.6s ease-out infinite;
+  }
+  .next svg { width: 16px; height: 16px; transform: rotate(-14deg); transition: transform .5s var(--ease); }
+  .next:hover .tile, .next:focus-visible .tile { transform: none; background: color-mix(in srgb, var(--acc) 16%, transparent); animation: none; }
+  .next:hover svg, .next:focus-visible svg { transform: none; }
+  .next.run .tile { transform: none; animation: none; background: color-mix(in srgb, var(--acc) 22%, transparent); }
+  .next.run svg { animation: nextRun .9s ease-in-out infinite; transform: none; }
+  .next.off { opacity: 0; visibility: hidden; pointer-events: none; transition: opacity .3s, visibility 0s .3s; }
+  @keyframes nextBob { 0%, 100% { transform: rotate(14deg) translate(3px, 3px); } 50% { transform: rotate(10deg) translate(3px, 7px); } }
+  @keyframes nextPing { 0% { box-shadow: 0 0 0 0 rgba(95,179,154,.55); } 60%, 100% { box-shadow: 0 0 0 11px rgba(95,179,154,0); } }
+  @keyframes nextRun { 0%, 100% { transform: translateY(-2px); } 50% { transform: translateY(3px); } }
+  /* on a phone the step text sits at the bottom: keep its lines clear of the button */
+  @media (max-width: 859px) { .js .beat.pin .copy { padding-inline-end: 56px; } }
+  .toast {
+    position: fixed; z-index: 20; inset-inline: var(--gutter); bottom: calc(env(safe-area-inset-bottom, 0px) + 18px);
+    max-width: 30rem; margin-inline: auto; padding: 14px 16px; border-radius: 8px;
+    background: var(--text); color: var(--bg); font-size: 14px; line-height: 1.4;
+    transform: translateY(calc(100% + 60px)); visibility: hidden;
+    transition: transform .6s var(--ease), visibility 0s .6s;
+  }
+  .toast.on { transform: none; visibility: visible; transition: transform .6s var(--ease); }
+
+  /* fallback without WebGL */
+  .fallback { display: none; }
+  .nogl .fallback {
+    display: block; width: min(92%, 22rem); aspect-ratio: 9 / 5; margin: 0 auto 2.5rem; border-radius: 12px;
+    background: linear-gradient(135deg, #2a2720, #1b1a15 60%); border: 1px solid #c89a4c;
+    box-shadow: 0 30px 60px rgba(0,0,0,.5);
+  }
+
+  /* phone: the finale's text starts under the card (card centre ≈ 29% of the height, half-height ≈ 17.8% of the width) */
+  @media (max-width: 859px) {
+    .beat[data-beat="4"] { justify-content: flex-start; padding-top: calc(29svh + 17.8vw + 30px); }
+  }
+  /* phone: the kicker tracks a little tighter so «name · role · country» doesn't break mid-way */
+  @media (max-width: 859px) { .kicker { letter-spacing: .07em; } html[lang="he"] .kicker { letter-spacing: 0; font-size: 11.5px; } }
+  /* phone: the three result cards above already show what each service is — the list becomes four tags */
+  @media (max-width: 859px) {
+    .outs { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: 8px; border-top: 0; margin-top: .2rem; }   /* 2 × 2, not a ragged row (Tomer 27.09) */
+    .outs li { display: block; padding: .6rem .3rem; border: 1px solid rgba(230,228,222,.2); border-radius: 6px; text-align: center; font-size: .92rem; }
+    .outs span { display: none; }
+  }
+  @media (min-width: 860px) {
+    .beat { justify-content: center; padding-block: 6rem 4rem; }
+    .copy { max-width: 31rem; }
+    .copy::before { display: none; }
+    .js .beat.pin .copy { bottom: auto; top: 50%; inset-inline-end: auto; transform: translateY(calc(-50% + var(--dy, 0px))); }
+    .ctas { max-width: 28rem; }
+  }
+  /* short desktop screens: Plex sets the contact block ~40 px taller, the step's padding must give it room (DEFECTS §24) */
+  @media (min-width: 860px) and (max-height: 800px) {
+    .beat[data-beat="4"] { padding-block: 6.25rem .5rem; }
+  }
+  /* short phones: the contact block has to fit under the header at the very bottom (DEFECTS §24) */
+  @media (max-width: 859px) and (max-height: 760px) {
+    .beat[data-beat="4"] { padding-bottom: 1.25rem; }
+    .beat[data-beat="4"] .ctas { margin: 1rem 0 .7rem; }
+    .beat[data-beat="4"] .note { margin-top: .6rem !important; }
+    .beat[data-beat="4"] .note { margin-bottom: 0 !important; }   /* one row lighter (03.10), the block fits whole — its tail margin pushed the top under the header */
+    .beat[data-beat="4"] .site-link { margin-top: .6rem !important; }
+    .beat[data-beat="4"] h2 { margin-bottom: .55rem; }
+    .beat[data-beat="4"] .copy p[data-t="p4"] { margin-bottom: .4rem; }
+  }
+  @media (prefers-reduced-motion: reduce) {
+    .unread i { animation: none; }
+    .btn, .toast { transition: none; }
+    .next .tile, .next svg { animation: none !important; }
+  }
+</style>
+
+<canvas id="gl" aria-hidden="true"></canvas>
+
+<header class="bar">
+  <a class="brand" href="#top" aria-label="iukhvidov">
+    <svg viewBox="0 0 48 48" aria-hidden="true"><rect x="6" y="6" width="16" height="16" rx="2.5" fill="currentColor"/><rect x="26" y="6" width="16" height="16" rx="2.5" fill="currentColor"/><rect x="6" y="26" width="16" height="16" rx="2.5" fill="currentColor"/><rect x="28.5" y="27.5" width="16" height="16" rx="2.5" fill="none" stroke="var(--acc)" stroke-width="3" transform="rotate(14 36.5 35.5)"/></svg>
+    <span class="wm" aria-hidden="true"><span class="i">ı</span>ukhv<span class="i done">ı</span>dov</span>
+  </a>
+  <div class="bar-r">
+    <div class="langs" role="group" aria-label="Language">
+      <button type="button" id="l-he" data-lang="he">HE</button>
+      <button type="button" id="l-ru" data-lang="ru">RU</button>
+      <button type="button" id="l-en" data-lang="en">EN</button>
+    </div>
+  </div>
+  <div class="progress"><i id="prog"></i></div>
+</header>
+<!-- «next» sits right after the header: second in the Tab order, before the finale's links (QA 28.09) -->
+<button class="next" id="next" type="button" aria-label="Дальше" data-t-label="next">
+  <span class="tile"><svg viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M8 3v9M3.5 7.5 8 12l4.5-4.5" stroke="currentColor" stroke-width="2" stroke-linecap="square"/></svg></span>
+</button>
+
+<main id="top">
+  <section class="beat pin" data-beat="0">
+    <div class="fallback" aria-hidden="true"></div>
+    <div class="copy">
+      <p class="kicker" data-t="k0">Tomer Iukhvidov · разработчик · Израиль</p>
+      <h1 data-t="h0">Сайты, боты и системы, которые работают каждый день</h1>
+      <p data-t="p0">Для малого бизнеса. Без агентства — один человек на проекте, от первого звонка до запуска.</p>
+    </div>
+  </section>
+
+  <section class="beat pin" data-beat="1">
+    <div class="copy">
+      <p class="kicker" data-t="k1">Как сейчас</p>
+      <h2 data-t="h1">В бизнес каждый день сыплется всё сразу</h2>
+      <p data-t="p1">Заказы в WhatsApp, голосовые, фото накладных, чеки, звонки. Что-то теряется, что-то доделывается руками по вечерам.</p>
+    </div>
+  </section>
+
+  <section class="beat pin" data-beat="2">
+    <div class="copy">
+      <p class="kicker" data-t="k2">Что я делаю</p>
+      <h2 data-t="h2">Собираю это в одну систему</h2>
+      <p data-t="p2">Она сама принимает, раскладывает по местам и помнит. Под ваш процесс, а не шаблон из коробки: сначала смотрю, как вы работаете, потом пишу.</p>
+    </div>
+  </section>
+
+  <section class="beat pin" data-beat="3">
+    <div class="copy">
+      <p class="kicker" data-t="k3">Что на выходе</p>
+      <h2 data-t="h3">То, чем пользуются каждый день</h2>
+      <ul class="outs">
+        <li><b data-t="o1t">Сайт</b><span data-t="o1">Приводит клиентов и сам принимает заявки.</span></li>
+        <li><b data-t="o2t">Бот</b><span data-t="o2">Отвечает в WhatsApp и Telegram, пока вы заняты.</span></li>
+        <li><b data-t="o3t">Система учёта</b><span data-t="o3">Заказы, склад, смены — в телефоне у всей команды.</span></li>
+        <li><b data-t="o4t">Автоматизация</b><span data-t="o4">Счета, напоминания и отчёты уходят без вас.</span></li>
+      </ul>
+    </div>
+  </section>
+
+  <section class="beat" data-beat="4" id="contact">
+    <div class="copy">
+      <p class="kicker" data-t="k4">Связь</p>
+      <h2 data-t="h4">Расскажите, как вы работаете сейчас</h2>
+      <p data-t="p4">Отвечаю сам, без менеджеров. Посмотрю процесс и скажу, что можно снять с ваших рук — и сколько это стоит.</p>
+      <div class="ctas">
+        <a class="btn wa" id="wa" href="https://wa.me/972505760542" target="_blank" rel="noopener">
+          <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2Zm0 18.2a8.2 8.2 0 0 1-4.2-1.2l-.3-.2-3 .8.8-2.9-.2-.3A8.2 8.2 0 1 1 12 20.2Zm4.5-6.1c-.2-.1-1.5-.7-1.7-.8s-.4-.1-.6.1-.7.8-.8 1-.3.2-.5.1a6.7 6.7 0 0 1-3.3-2.9c-.3-.4.3-.4.7-1.3a.5.5 0 0 0 0-.5l-.8-1.8c-.2-.5-.4-.4-.6-.4h-.5a1 1 0 0 0-.7.3 3 3 0 0 0-.9 2.2 5.2 5.2 0 0 0 1.1 2.7 11.8 11.8 0 0 0 4.5 4c1.7.7 2.3.8 3.2.6a2.7 2.7 0 0 0 1.8-1.2 2.2 2.2 0 0 0 .1-1.3c0-.1-.2-.2-.5-.3Z"/></svg>
+          <span data-t="cwa">Написать в WhatsApp</span>
+        </a>
+        <a class="btn tg" id="tg" href="https://t.me/iukhvidov2" target="_blank" rel="noopener">
+          <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M21.5 4.3 2.9 11.5c-1.3.5-1.2 1.2-.2 1.5l4.8 1.5 1.8 5.6c.2.6.1.9.8.9.5 0 .7-.2 1-.5l2.4-2.3 4.9 3.6c.9.5 1.5.2 1.8-.8L23.3 5.6c.3-1.4-.5-2-1.8-1.3ZM8.6 14.1l9.6-6c.5-.3.9-.1.5.2l-8.2 7.4-.3 3.4-1.6-5Z"/></svg>
+          Telegram
+        </a>
+        <a class="btn mail" id="mail" href="mailto:iukhvidov@tomerisr.org.il">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round" aria-hidden="true"><rect x="3.5" y="5.5" width="17" height="13" rx="2"/><path d="m4 7 8 6 8-6"/></svg>
+          <span data-t="cmail">Почта</span>
+        </a>
+        <a class="btn call" id="call" href="tel:+972505760542">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round" aria-hidden="true"><path d="M6.6 3.5h2.6l1.5 4.2-2 1.4a11 11 0 0 0 6.2 6.2l1.4-2 4.2 1.5v2.6a2 2 0 0 1-2.1 2A16.6 16.6 0 0 1 4.6 5.6a2 2 0 0 1 2-2.1Z"/></svg>
+          <span data-t="ccall">Позвонить</span><span class="num">+972 50-576-0542</span>
+        </a>
+      </div>
+      <p class="site-link"><a href="https://iukhvidov.tomerisr.org.il" target="_blank" rel="noopener">iukhvidov.tomerisr.org.il</a> <span data-t="siteL">— работы и кейсы</span></p>
+      <p class="note" data-t="note">Нажмите на визитку: на обороте — QR на WhatsApp, покажите экран собеседнику. Нажмёте ещё раз — и всё сначала.</p>
+    </div>
+  </section>
+</main>
+
+<div class="sheet" id="sheet" role="dialog" aria-modal="true" aria-labelledby="sheet-from" hidden>
+  <div class="sheet-bg" id="sheet-bg"></div>
+  <article class="sheet-card" id="sheet-card">
+    <header class="sheet-head"><img id="sheet-ic" alt=""><span id="sheet-app"></span><time id="sheet-when"></time><button class="sheet-x" id="sheet-x" type="button" aria-label="Close">×</button></header>
+    <p class="sheet-from" id="sheet-from" dir="auto"></p>
+    <p class="sheet-msg" id="sheet-msg" dir="auto"></p>
+    <div class="sheet-reply"><small id="sheet-label"></small><p id="sheet-text"></p></div>
+    <div class="sheet-acts" id="sheet-acts"></div>
+  </article>
+</div>
+<div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js" integrity="sha384-CI3ELBVUz9XQO+97x6nwMDPosPR5XvsxW2ua7N1Xeygeh1IxtgqtCkGfQY9WWdHu" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/qrcode-generator/1.4.4/qrcode.min.js" integrity="sha384-mZT2gIty7ZDdOGkxfP6joZcYdMW1Jvj9dRlfpTmaJAKKXTqzygtB22k7FLe+KZC1" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js" integrity="sha384-g4NTh/Iv5PPU4xPyhEWqPcwtNXOvdaDI8LLnyYfyNZOjKJeYQyjzQ9X5275eBjpt" crossorigin="anonymous"></script>
+<script>
+(() => {
+'use strict';
+document.documentElement.classList.add('js');
+
+/* ═══════════════ copy ═══════════════ */
+const T = {
+  ru: {
+    write: 'Написать',
+    k0: 'Tomer Iukhvidov · разработчик · Израиль',
+    h0: 'Сайты, боты и системы, которые работают каждый день',
+    p0: 'Для малого бизнеса. Без агентства — один человек на проекте, от первого звонка до запуска.',
+    next: 'Дальше', unread: 'непрочитанных', siteL: '— работы и кейсы', demo: 'демо-проект',
+    sysLabel: '✦ Уже разобрано системой', meLabel: 'Это я', want: 'Хочу так же', closeL: 'Закрыть',
+    ctaTg: 'Открыть Telegram', ctaCall: 'Договориться о созвоне', ctaPhone: 'Позвонить', ctaMail: 'Написать письмо',
+    copyNum: 'Скопировать номер', copyMail: 'Скопировать адрес',
+    waWant: 'Привет! Нажал на визитке «{msg}» — хочу так же у себя.', waCall: 'Привет! Хочу созвон на 15 минут.',
+    k1: 'Как сейчас', h1: 'В бизнес каждый день сыплется всё сразу',
+    p1: 'Заказы в WhatsApp, голосовые, фото накладных, чеки, звонки. Что-то теряется, что-то доделывается руками по вечерам.',
+    k2: 'Что я делаю', h2: 'Собираю это в одну систему',
+    p2: 'Она сама принимает, раскладывает по местам и помнит. Под ваш процесс, а не шаблон из коробки: сначала смотрю, как вы работаете, потом пишу.',
+    k3: 'Что на выходе', h3: 'То, чем пользуются каждый день',
+    o1t: 'Сайт', o1: 'Приводит клиентов и сам принимает заявки.',
+    o2t: 'Бот', o2: 'Отвечает в WhatsApp и Telegram, пока вы заняты.',
+    o3t: 'Система учёта', o3: 'Заказы, склад, смены — в телефоне у всей команды.',
+    o4t: 'Автоматизация', o4: 'Счета, напоминания и отчёты уходят без вас.',
+    k4: 'Связь', h4: 'Расскажите, как вы работаете сейчас',
+    p4: 'Отвечаю сам, без менеджеров. Посмотрю процесс и скажу, что можно снять с ваших рук — и сколько это стоит.',
+    cwa: 'Написать в WhatsApp', cmail: 'Почта',
+    copied: 'Скопировано', ccall: 'Позвонить',
+    note: 'Нажмите на визитку: на обороте — QR на WhatsApp, покажите экран собеседнику. Нажмёте ещё раз — и всё сначала.',
+    waText: 'Привет! Увидел твою визитку — хочу обсудить проект.',
+    site: { cap: 'САЙТ', url: 'kora-bakery.co.il', nav: ['Меню', 'Кейтеринг', 'Контакты'], h: ['Хлеб с утра,', 'кейтеринг к вечеру'], rating: '4.9 ★ · 312 отзывов', btn: 'Заказать',
+      faqT: 'Вопросы', q1: 'Кейтеринг — за сколько?', a1: 'За 3 дня', q2: 'Доставляете в Хайфу?', a2: 'Да, вт и пт',
+      leadsT: 'Заявки · сегодня', lead1: 'Ирит · свадьба, 80 гостей', lead2: 'Новая: «нужна смета»', fresh: 'новая' },
+    bot: { cap: 'БОТ', name: 'Tavor Print · бот', status: 'онлайн', speed: 'ответ за 4 сек', today: 'Сегодня', inq: 'Сможете 40 шт к завтра?',
+      out: 'Да. Записал 40 шт на 9:00 — счёт пришлю сюда же.', voice: '0:42', voiceT: '«Перезвоните до 17:00» → задача', msg: 'Сообщение' },
+    sys: { cap: 'СИСТЕМА', title: 'Café Yam · панель', date: '25.09 · 08:14', k1: ['Выручка', '₪ 4 820', '+12%'], k2: ['Заказы', '37'], k3: ['Средний чек', '₪ 130'],
+      cols: ['#', 'Заказ', 'Статус'], r0: ['#2290', 'Кейтеринг · 80 гостей', 'в работе'], r1: ['#2291', 'Торты × 3', 'ждёт оплаты', 'оплачен'],
+      r2: ['#A-2231', 'Wolt · 3 позиции', 'новый'], week: 'неделя', chartT: 'Выручка за неделю', k1f: '₪ 5 006', days: ['Сб', 'Вс', 'Пн', 'Вт', 'Ср', 'Чт', 'Пт'], dec: ',', kilo: 'к' },
+  },
+  he: {
+    write: 'לכתוב',
+    k0: 'Tomer Iukhvidov · מפתח עצמאי · ישראל',
+    h0: 'אתרים, בוטים ומערכות שעובדים כל יום',
+    p0: 'לעסקים קטנים. בלי סוכנות — אדם אחד על הפרויקט, מהשיחה הראשונה ועד ההשקה.',
+    next: 'הלאה', unread: 'לא נקראו', siteL: '— עבודות ופרויקטים', demo: 'פרויקט הדגמה',
+    sysLabel: '✦ המערכת כבר טיפלה', meLabel: 'זה אני', want: 'רוצה כזה גם אצלי', closeL: 'סגירה',
+    ctaTg: 'לפתוח טלגרם', ctaCall: 'לתאם שיחה', ctaPhone: 'להתקשר', ctaMail: 'לכתוב מייל',
+    copyNum: 'העתקת המספר', copyMail: 'העתקת הכתובת',
+    waWant: 'היי! לחצתי בכרטיס על "{msg}" — רוצה כזה גם אצלי.', waCall: 'היי! רוצה לתאם שיחה של 15 דקות.',
+    k1: 'איך זה היום', h1: 'כל יום הכול נוחת על העסק בבת אחת',
+    p1: 'הזמנות בוואטסאפ, הודעות קוליות, צילומים של תעודות משלוח, קבלות, שיחות. משהו הולך לאיבוד, ומשהו נגמר בעבודה ידנית בערב.',
+    k2: 'מה אני עושה', h2: 'אני מחבר את כל זה למערכת אחת',
+    p2: 'היא מקבלת, מסדרת וזוכרת לבד. לפי התהליך שלכם ולא תבנית מהמדף: קודם אני רואה איך אתם עובדים, ורק אז כותב.',
+    k3: 'מה יוצא בסוף', h3: 'דברים שמשתמשים בהם כל יום',
+    o1t: 'אתר', o1: 'מביא לקוחות ומקבל פניות לבד.',
+    o2t: 'בוט', o2: 'עונה בוואטסאפ ובטלגרם כשאתם עסוקים.',
+    o3t: 'מערכת ניהול', o3: 'הזמנות, מלאי, משמרות — בטלפון של כל הצוות.',
+    o4t: 'אוטומציה', o4: 'חשבוניות, תזכורות ודוחות יוצאים בלעדיכם.',
+    k4: 'יצירת קשר', h4: 'ספרו לי איך אתם עובדים היום',
+    p4: 'אני עונה בעצמי, בלי מנהלי לקוחות. אסתכל על התהליך ואגיד מה אפשר להוריד לכם מהידיים — וכמה זה עולה.',
+    cwa: 'לכתוב בוואטסאפ', cmail: 'מייל',
+    copied: 'הועתק', ccall: 'להתקשר',
+    note: 'לחצו על הכרטיס: בגב יש QR לוואטסאפ — הראו את המסך. לחיצה נוספת — והכול מתחיל מחדש.',
+    waText: 'היי! ראיתי את הכרטיס שלך — אשמח לדבר על פרויקט.',
+    site: { cap: 'אתר', url: 'kora-bakery.co.il', nav: ['תפריט', 'קייטרינג', 'צור קשר'], h: ['לחם בבוקר,', 'קייטרינג בערב'], rating: '4.9 ★ · 312 ביקורות', btn: 'להזמנה',
+      faqT: 'שאלות', q1: 'קייטרינג — כמה זמן מראש?', a1: '3 ימים', q2: 'עושים משלוחים לחיפה?', a2: 'כן, ג׳ ו־ו׳',
+      leadsT: 'פניות · היום', lead1: 'עירית · חתונה, 80 אורחים', lead2: 'חדשה: "צריך הצעת מחיר"', fresh: 'חדשה' },
+    bot: { cap: 'בוט', name: 'Tavor Print · בוט', status: 'מחובר', speed: 'מענה תוך 4 שניות', today: 'היום', inq: 'אפשר 40 יחידות למחר?',
+      out: 'כן. רשמתי 40 יח׳ ל־9:00 — החשבונית תגיע לכאן.', voice: '0:42', voiceT: '"תחזרו אליי עד 17:00" ← משימה', msg: 'הודעה' },
+    sys: { cap: 'מערכת', title: 'Café Yam · לוח בקרה', date: '25.09 · 08:14', k1: ['הכנסות', '₪ 4,820', '+12%'], k2: ['הזמנות', '37'], k3: ['ממוצע להזמנה', '₪ 130'],
+      cols: ['#', 'הזמנה', 'סטטוס'], r0: ['#2290', 'קייטרינג · 80 אורחים', 'בעבודה'], r1: ['#2291', 'עוגות × 3', 'ממתין לתשלום', 'שולם'],
+      r2: ['#A-2231', 'Wolt · 3 פריטים', 'חדש'], week: 'שבוע', chartT: 'הכנסות השבוע', k1f: '₪ 5,006', days: ['ש׳', 'א׳', 'ב׳', 'ג׳', 'ד׳', 'ה׳', 'ו׳'], dec: '.', kilo: 'K' },
+  },
+  en: {
+    write: 'Message',
+    k0: 'Tomer Iukhvidov · independent developer · Israel',
+    h0: 'Websites, bots and systems that work every day',
+    p0: 'For small businesses. No agency — one person on the project, from the first call to launch.',
+    next: 'Next', unread: 'unread', siteL: '— work and case studies', demo: 'demo project',
+    sysLabel: '✦ Already handled by the system', meLabel: 'It’s me', want: 'I want this too', closeL: 'Close',
+    ctaTg: 'Open Telegram', ctaCall: 'Book a call', ctaPhone: 'Call', ctaMail: 'Write an email',
+    copyNum: 'Copy number', copyMail: 'Copy address',
+    waWant: 'Hi! I tapped “{msg}” on your card — I want this for my business.', waCall: 'Hi! I’d like a 15-minute call.',
+    k1: 'Right now', h1: 'Every day, everything lands on your business at once',
+    p1: 'Orders in WhatsApp, voice notes, photos of delivery notes, receipts, calls. Some of it gets lost, some gets finished by hand at night.',
+    k2: 'What I do', h2: 'I pull it all into one system',
+    p2: 'It takes things in, sorts them and remembers — on its own. Built around your process, not a boxed template: first I watch how you work, then I write the code.',
+    k3: 'What comes out', h3: 'Things people use every day',
+    o1t: 'Website', o1: 'Brings in clients and takes requests by itself.',
+    o2t: 'Bot', o2: 'Answers in WhatsApp and Telegram while you’re busy.',
+    o3t: 'Operations', o3: 'Orders, stock, shifts — on every team member’s phone.',
+    o4t: 'Automation', o4: 'Invoices, reminders and reports go out without you.',
+    k4: 'Contact', h4: 'Tell me how you work today',
+    p4: 'I answer myself, no account managers. I’ll look at your process and tell you what can come off your hands — and what it costs.',
+    cwa: 'Message on WhatsApp', cmail: 'Email',
+    copied: 'Copied', ccall: 'Call',
+    note: 'Tap the card: the back carries a WhatsApp QR to show someone. Tap again to start over.',
+    waText: 'Hi! I saw your card — I’d like to talk about a project.',
+    site: { cap: 'WEBSITE', url: 'kora-bakery.co.il', nav: ['Menu', 'Catering', 'Contact'], h: ['Bread by morning,', 'catering by night'], rating: '4.9 ★ · 312 reviews', btn: 'Order',
+      faqT: 'FAQ', q1: 'Catering — how early?', a1: '3 days ahead', q2: 'Deliver to Haifa?', a2: 'Yes, Tue & Fri',
+      leadsT: 'Requests · today', lead1: 'Irit · wedding, 80 guests', lead2: 'New: “need a quote”', fresh: 'new' },
+    bot: { cap: 'BOT', name: 'Tavor Print · bot', status: 'online', speed: 'replies in 4 sec', today: 'Today', inq: 'Can you do 40 pcs for tomorrow?',
+      out: 'Yes. Booked 40 pcs for 9:00 — the invoice will land right here.', voice: '0:42', voiceT: '“Call me back before 17:00” → task', msg: 'Message' },
+    sys: { cap: 'SYSTEM', title: 'Café Yam · dashboard', date: '25.09 · 08:14', k1: ['Revenue', '₪ 4,820', '+12%'], k2: ['Orders', '37'], k3: ['Avg. order', '₪ 130'],
+      cols: ['#', 'Order', 'Status'], r0: ['#2290', 'Catering · 80 guests', 'in progress'], r1: ['#2291', 'Cakes × 3', 'awaiting payment', 'paid'],
+      r2: ['#A-2231', 'Wolt · 3 items', 'new'], week: 'week', chartT: 'Revenue this week', k1f: '₪ 5,006', days: ['Sat', 'Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri'], dec: '.', kilo: 'k' },
+  }
+};
+const PHONE = '+972505760542';
+// what an opened notification shows: 'sys' = already handled by the system, 'me' = one of my own channels
+const CASES = {
+  0: ['sys', { ru: 'Сайт выложен вчера в 23:40, проверки прошли. Дана получила ссылку автоматически.', he: 'האתר עלה אתמול ב־23:40, כל הבדיקות עברו. דנה קיבלה את הקישור אוטומטית.', en: 'The site went live last night at 23:40, checks passed. Dana got the link automatically.' }],
+  1: ['sys', { ru: 'На третий день система сама напомнила клиенту. Оплата пришла вчера, счёт закрыт.', he: 'ביום השלישי המערכת שלחה ללקוח תזכורת בעצמה. התשלום נכנס אתמול, החשבונית נסגרה.', en: 'On day three the system reminded the client by itself. Payment came in yesterday, invoice closed.' }],
+  2: ['sys', { ru: 'Бот спросил, кто свободен, Лирон согласилась. График обновился у всех в телефоне.', he: 'הבוט שאל מי פנוי, לירון הסכימה. הסידור התעדכן אצל כולם בטלפון.', en: 'The bot asked who’s free, Liron said yes. The schedule updated on everyone’s phone.' }],
+  3: ['sys', { ru: 'Пока вы были заняты, бот написал поставщику в WhatsApp и записал его вопрос в задачи.', he: 'בזמן שהייתם עסוקים, הבוט כתב לספק בוואטסאפ ורשם את השאלה שלו כמשימה.', en: 'While you were busy, the bot texted the supplier on WhatsApp and logged his question as a task.' }],
+  4: ['me', { ru: 'Это я в Telegram. Пишите сюда — отвечаю сам, без менеджеров.', he: 'זה אני בטלגרם. כתבו לי — אני עונה בעצמי, בלי מנהלי לקוחות.', en: 'That’s me on Telegram. Write here — I answer myself, no account managers.' }, 'tg'],
+  5: ['sys', { ru: 'Таблицы больше нет: остатки считает система по каждой продаже и поставке.', he: 'אין יותר גיליון: המערכת סופרת את המלאי מכל מכירה ומשלוח.', en: 'There’s no sheet anymore: stock is counted by the system from every sale and delivery.' }],
+  6: ['sys', { ru: 'Меню обновлено из одной таблицы в 16:12 — на сайте, в Wolt и в боте одновременно.', he: 'התפריט התעדכן מטבלה אחת ב־16:12 — באתר, בוולט ובבוט בבת אחת.', en: 'The menu updated from one table at 16:12 — on the site, on Wolt and in the bot at once.' }],
+  7: ['sys', { ru: 'Бот ответил за 4 секунды: показал примеры, вилку цен и записал на звонок.', he: 'הבוט ענה תוך 4 שניות: דוגמאות, טווח מחירים ותיאום שיחה.', en: 'The bot replied in 4 seconds: examples, a price range and a call booked.' }],
+  8: ['sys', { ru: 'Бот в Instagram ответил сразу: «Да, по вторникам и пятницам» — и дал ссылку на заказ.', he: 'הבוט באינסטגרם ענה מיד: "כן, בימי שלישי ושישי" — עם קישור להזמנה.', en: 'The Instagram bot answered at once: “” — with an order link.' }],
+  9: ['sys', { ru: 'Платёж сам сопоставлен со счётом №2291 и отмечен в бухгалтерии.', he: 'התשלום הותאם לחשבונית 2291 לבד וסומן בהנהלת החשבונות.', en: 'The payment matched invoice #2291 by itself and was marked in the books.' }],
+  10: ['sys', { ru: 'Правки Ави попали в систему, а не в файл — у всех одна версия правды.', he: 'העריכות של אבי נכנסו למערכת ולא לקובץ — לכולם אותה גרסה.', en: 'Avi’s edits went into the system, not a file — everyone sees one version of the truth.' }],
+  11: ['sys', { ru: 'Таких отзывов больше нет: на пропущенный звонок бот отвечает сам через минуту.', he: 'אין יותר ביקורות כאלה: הבוט עונה לכל שיחה שלא נענתה תוך דקה.', en: 'No more reviews like this: the bot answers every missed call within a minute.' }],
+  12: ['sys', { ru: 'Система видит остаток и сама собрала заказ поставщику — осталось нажать «Отправить».', he: 'המערכת ראתה את המלאי והכינה הזמנה לספק — נשאר ללחוץ "שלח".', en: 'The system saw the stock level and drafted the supplier order — one tap to send.' }],
+  13: ['sys', { ru: 'Правки клиента собраны в одну карточку с версиями — в переписке ничего не теряется.', he: 'השינויים של הלקוח מרוכזים בכרטיס אחד עם גרסאות — שום דבר לא הולך לאיבוד בצ׳אט.', en: 'The client’s changes live in one card with versions — nothing gets lost in chat.' }],
+  14: ['sys', { ru: 'Голосовое расшифровано, из него создана задача: «перезвонить до 17:00».', he: 'ההודעה הקולית תומללה והפכה למשימה: "לחזור עד 17:00".', en: 'The voicemail was transcribed and turned into a task: “”.' }],
+  15: ['me', { ru: 'Созвон со мной, 15 минут: расскажете процесс — скажу, что можно автоматизировать.', he: 'שיחה איתי, 15 דקות: תספרו על התהליך — ואגיד מה אפשר לאטמט.', en: 'A 15-minute call with me: you describe the process, I tell you what can run by itself.' }, 'call'],
+  16: ['sys', { ru: 'Бот вытащил главное из 12 сообщений: 2 подмены и 1 заказ. Остальное — болтовня.', he: 'הבוט שלף את העיקר מ־12 הודעות: 2 החלפות משמרת והזמנה אחת. השאר — פטפוטים.', en: 'The bot pulled the point out of 12 messages: 2 shift swaps and 1 order. The rest is chatter.' }],
+  17: ['sys', { ru: 'Заказ из Wolt сам попал в систему кухни и в отчёт дня.', he: 'ההזמנה מוולט נכנסה ישר למערכת המטבח ולדוח היומי.', en: 'The Wolt order dropped straight into the kitchen system and the daily report.' }],
+  18: ['sys', { ru: 'Документы ушли на электронную подпись автоматически, как только заказ подтвердили.', he: 'המסמכים נשלחו לחתימה דיגיטלית אוטומטית ברגע שההזמנה אושרה.', en: 'The documents went out for e-signature automatically once the order was confirmed.' }],
+  19: ['sys', { ru: 'Дедлайн один — в системе. Сдвинули — все увидели и получили напоминание.', he: 'יש דדליין אחד — במערכת. הזיזו אותו — כולם ראו וקיבלו תזכורת.', en: 'There’s one deadline — in the system. Moved it — everyone saw it and got a reminder.' }],
+  20: ['sys', { ru: '«Да. Записал 40 шт на 9:00 — счёт пришлю сюда же». Ответил бот, без вас.', he: '"כן. רשמתי 40 יח׳ ל־9:00 — החשבונית תגיע לכאן". ענה הבוט, בלעדיכם.', en: '“” The bot replied, not you.' }],
+  21: ['sys', { ru: 'Клиенты, которых касается задержка, получили сообщение сами — до того, как начали звонить.', he: 'הלקוחות שהעיכוב נוגע להם קיבלו הודעה לבד — לפני שהתחילו להתקשר.', en: 'Affected customers were notified automatically — before they started calling.' }],
+  22: ['me', { ru: 'Моя мастерская в Instagram: процесс, демо и то, что уже работает у клиентов.', he: 'הסדנה שלי באינסטגרם: תהליך, דמו ומה שכבר עובד אצל לקוחות.', en: 'My workshop on Instagram: process, demos and what already runs for clients.' }, 'insta'],
+  23: ['sys', { ru: 'Отчёт собран из данных системы за месяц. Бухгалтер получил его ещё 20-го.', he: 'הדוח הורכב מנתוני החודש במערכת. רואה החשבון קיבל אותו כבר ב־20.', en: 'The report was assembled from the month’s data. Your accountant had it on the 20th.' }],
+  24: ['me', { ru: 'А это уже я. Напишите в WhatsApp, что за бизнес и что болит — отвечаю сам.', he: 'וזה כבר אני. כתבו בוואטסאפ איזה עסק ומה כואב — אני עונה בעצמי.', en: 'And this one is me. Tell me on WhatsApp what your business is and what hurts — I answer myself.' }, 'wa'],
+  25: ['sys', { ru: 'Одна версия договора в системе, остальные — в архиве. «final2» больше не бывает.', he: 'גרסה אחת של החוזה במערכת, השאר בארכיון. אין יותר "final2".', en: 'One version of the contract in the system, the rest archived. No more “”.' }],
+  26: ['me', { ru: 'Это звоню я. Или наберите сами: +972 50-576-0542.', he: 'זה אני מתקשר. או חייגו אליי: 050-576-0542.', en: 'That’s me calling. Or dial me yourself: +972 50-576-0542.' }, 'phone'],
+  27: ['me', { ru: 'Напишите мне на почту — пришлю оценку и сроки в течение дня.', he: 'כתבו לי במייל — אשלח הערכה ולוחות זמנים תוך יום.', en: 'Email me — I’ll send an estimate and a timeline within a day.' }, 'mail']
+};
+
+/* ═══════════════ state ═══════════════ */
+const store = {
+  get(k) { try { return localStorage.getItem(k); } catch (e) { return null; } },
+  set(k, v) { try { localStorage.setItem(k, v); } catch (e) {} }
+};
+let lang = store.get('card-lang');
+if (!T[lang]) {
+  const nav = (navigator.language || 'he').slice(0, 2);
+  lang = nav === 'ru' ? 'ru' : nav === 'en' ? 'en' : 'he';
+}
+const reduced = matchMedia('(prefers-reduced-motion: reduce)').matches;
+const $ = (s, r = document) => r.querySelector(s);
+const $$ = (s, r = document) => [...r.querySelectorAll(s)];
+
+function toast(msg) {
+  const el = $('#toast');
+  el.textContent = msg; el.classList.add('on');
+  clearTimeout(toast.t); toast.t = setTimeout(() => el.classList.remove('on'), 4200);
+}
+
+function splitWords(el) {
+  // headline → words (never broken across lines) → letters
+  const words = el.textContent.split(' ');
+  el.textContent = '';
+  el.setAttribute('aria-label', words.join(' '));
+  words.forEach((w, i) => {
+    const o = document.createElement('span'); o.className = 'w'; o.setAttribute('aria-hidden', 'true');
+    [...w].forEach(ch => { const c = document.createElement('span'); c.className = 'ch'; c.textContent = ch; o.appendChild(c); });
+    el.appendChild(o);
+    if (i < words.length - 1) el.appendChild(document.createTextNode(' '));
+  });
+}
+function splitPara(el) {
+  const words = el.textContent.split(' ');
+  el.textContent = '';
+  words.forEach((w, i) => {
+    const o = document.createElement('span'); o.className = 'pw'; o.textContent = w; el.appendChild(o);
+    if (i < words.length - 1) el.appendChild(document.createTextNode(' '));
+  });
+}
+// the decoding line is built of fixed cells: a random glyph never changes the width, so the line doesn't
+// jump — which is what kept Hebrew out of it (Tomer 27.09). Segments between " · " never break inside.
+function buildKicker(el, text) {
+  const esc = c => c.replace(/&/g, '&amp;').replace(/</g, '&lt;');
+  // a Latin run inside Hebrew keeps its own direction (cells are separate boxes, bidi would reverse them);
+  // the dot stays with the segment before it, so a line never starts with «·»
+  const segs = text.split(' · ');
+  el.innerHTML = segs.map((seg, k) => `<span class="kw"${/[֐-׿]/.test(seg) ? '' : ' dir="ltr"'}>` + [...seg].map(c => c === ' ' ? ' ' : `<span class="kc">${esc(c)}</span>`).join('') + '</span>' + (k < segs.length - 1 ? '<span class="ks"> ·</span> ' : ''))
+    .join('');
+  el.dataset.built = text;
+  el.querySelectorAll('.kc').forEach(c => { c.style.width = ''; });
+  el.querySelectorAll('.kc').forEach(c => { c.style.width = c.getBoundingClientRect().width.toFixed(2) + 'px'; });
+}
+function scramble(el, text, dur, delay = 0) {
+  // every letter settles at its own moment — left to right on average (right to left in Hebrew), with
+  // scatter — so the whole line is alive for the whole run (§29)
+  const glyphs = lang === 'he' ? 'אבגדהוזחטיכלמנסעפצקרשת█▓▒░' : '█▓▒░/<>_-=+*#01';
+  if (el.dataset.built !== text) buildKicker(el, text);
+  // the goal comes from the text, never from the cells: a second run started mid-way (the rewind fires two)
+  // would read half-scrambled glyphs as the answer and settle on rubbish (Tomer 28.09, DEFECTS §33)
+  const cells = [...el.querySelectorAll('.kc')], goal = [...text.split(' · ').join('')].filter(c => c !== ' '), n = cells.length;
+  const t0 = performance.now() + delay * 1000;
+  const at = cells.map((c, i) => .15 + .55 * (i / Math.max(1, n - 1)) + .3 * Math.random());
+  cancelAnimationFrame(el._scr);
+  const step = now => {
+    const t = Math.max(0, (now - t0) / (dur * 1000));
+    cells.forEach((c, i) => { const done = t >= at[i]; c.textContent = done ? goal[i] : glyphs[(Math.random() * glyphs.length) | 0]; c.classList.toggle('run', !done); });
+    if (t < 1) el._scr = requestAnimationFrame(step);
+  };
+  el._scr = requestAnimationFrame(step);
+}
+function applyLang() {
+  const L = T[lang];
+  document.documentElement.lang = lang;
+  document.documentElement.dir = lang === 'he' ? 'rtl' : 'ltr';
+  $$('[data-t]').forEach(el => { const v = L[el.dataset.t]; if (typeof v === 'string') el.textContent = v; });
+  $$('.beat h1, .beat h2').forEach(splitWords);
+  $$('.beat .copy p[data-t]:not(.kicker)').forEach(splitPara);
+  $$('.langs button').forEach(b => b.setAttribute('aria-pressed', String(b.dataset.lang === lang)));
+  $$('[data-t-label]').forEach(el => el.setAttribute('aria-label', L[el.dataset.tLabel]));
+  const wa = 'https://wa.me/972505760542?text=' + encodeURIComponent(L.waText);
+  $('#wa').href = wa;
+  // no «Write» button up top: the visitor goes down through the story (Tomer 27.09)
+  store.set('card-lang', lang);
+}
+$$('.langs button').forEach(b => b.addEventListener('click', () => {
+  if (b.dataset.lang === lang) return;
+  if (!sheet.hidden) closeSheet();   // its texts are in the old language (QA 28.09)
+  lang = b.dataset.lang; applyLang(); measure(); lastBeat = -1; paintCopy();
+  if (scene3d) scene3d.relang();
+}));
+applyLang();
+
+
+
+/* ═══════════════ an opened notification ═══════════════ */
+const sheet = $('#sheet'), sheetCard = $('#sheet-card');
+let sheetChip = -1, onSheetClose = null;
+function waLink(text) { return 'https://wa.me/972505760542?text=' + encodeURIComponent(text); }
+function actionBtn(cls, label, href) {
+  const a = document.createElement('a'); a.className = 'btn ' + cls; a.textContent = label; a.href = href; a.target = '_blank'; a.rel = 'noopener';
+  return a;
+}
+function copyBtn(label, value) {
+  const b = document.createElement('button'); b.type = 'button'; b.className = 'btn'; b.textContent = label;
+  b.addEventListener('click', () => {
+    const done = () => { b.textContent = T[lang].copied; setTimeout(() => b.textContent = label, 1600); };
+    try { navigator.clipboard.writeText(value).then(done, () => toast(value)); } catch (e) { toast(value); }
+  });
+  return b;
+}
+// a notification's height to width, as drawn in the scene (CHH / CHW)
+const CHIP_RATIO = 0.5 / 1.64;
+let sheetBand = '', sheetReturn = null;
+// Tab stays inside an open notification
+addEventListener('keydown', e => {
+  if (e.key !== 'Tab' || sheet.hidden) return;
+  const f = [...sheet.querySelectorAll('a[href], button:not([disabled])')].filter(el => el.offsetParent !== null);
+  if (!f.length) return;
+  const first = f[0], last = f[f.length - 1];
+  if (e.shiftKey && document.activeElement === first) { e.preventDefault(); last.focus(); }
+  else if (!e.shiftKey && document.activeElement === last) { e.preventDefault(); first.focus(); }
+});
+function openSheet(i, entry, icon, color, appName) {
+  const L = T[lang], [app, who, msg, when] = entry, [kind, text, act] = CASES[i];
+  sheetChip = i;
+  sheetCard.classList.toggle('me', kind === 'me');
+  sheetCard.style.setProperty('--app', color);
+  $('#sheet-ic').src = icon; $('#sheet-app').textContent = appName; $('#sheet-when').textContent = when;
+  $('#sheet-from').textContent = who; $('#sheet-msg').textContent = msg;
+  $('#sheet-label').textContent = kind === 'me' ? L.meLabel : L.sysLabel;
+  $('#sheet-x').setAttribute('aria-label', L.closeL);
+  const acts = $('#sheet-acts'); acts.textContent = '';
+  if (kind === 'sys') acts.appendChild(actionBtn('go wa', L.want, waLink(L.waWant.replace('{msg}', msg))));
+  else if (act === 'tg') acts.appendChild(actionBtn('go', L.ctaTg, 'https://t.me/iukhvidov2'));
+  else if (act === 'call') acts.appendChild(actionBtn('go wa', L.ctaCall, waLink(L.waCall)));
+  else if (act === 'insta') acts.appendChild(actionBtn('go', '@iukhvidov2', 'https://www.instagram.com/iukhvidov2/'));
+  else if (act === 'wa') acts.appendChild(actionBtn('go wa', L.cwa, waLink(L.waText)));
+  else if (act === 'phone') { acts.appendChild(actionBtn('go', L.ctaPhone, 'tel:' + PHONE)); acts.appendChild(copyBtn(L.copyNum, PHONE)); }
+  else if (act === 'mail') { acts.appendChild(actionBtn('go', L.ctaMail, 'mailto:iukhvidov@tomerisr.org.il')); acts.appendChild(copyBtn(L.copyMail, 'iukhvidov@tomerisr.org.il')); }
+  // the reply types itself out, letter by letter
+  const tp = $('#sheet-text'); tp.textContent = '';
+  const letters = [...text[lang]].map(ch => { const c = document.createElement('span'); c.textContent = ch; tp.appendChild(c); return c; });
+  sheet.hidden = false;
+  document.documentElement.style.overflow = 'hidden';
+  if (window.gsap && !reduced) {
+    // the notification that flew to the centre becomes the sheet: same width, same place, so the sheet
+    // starts as a band of the notification's height and opens up and down from it (a swap read as a jolt, 26.09)
+    const r = sheetCard.getBoundingClientRect(), band = Math.max(0, (r.height - r.width * CHIP_RATIO) / 2);
+    sheetBand = `inset(${band.toFixed(1)}px 0px ${band.toFixed(1)}px 0px round 24px)`;
+    const inner = [...sheetCard.children];
+    gsap.killTweensOf([sheetCard, ...inner, '#sheet-bg']);
+    gsap.fromTo('#sheet-bg', { opacity: 0 }, { opacity: 1, duration: .5, ease: 'power1.out' });
+    // the notification in the scene shows through while the sheet gains body: a crossfade, not a blank band
+    gsap.fromTo(sheetCard, { clipPath: sheetBand, opacity: 0 }, { clipPath: 'inset(0px 0px 0px 0px round 26px)', duration: .6, ease: 'power3.inOut', clearProps: 'clipPath' });
+    gsap.to(sheetCard, { opacity: 1, duration: .3, ease: 'power1.out' });
+    gsap.fromTo(inner, { opacity: 0, y: 6 }, { opacity: 1, y: 0, duration: .4, ease: 'power2.out', stagger: .04, delay: .18 });
+    const st = kind === 'me' ? .018 : .012;
+    gsap.fromTo(letters, { opacity: 0, color: getComputedStyle(document.documentElement).getPropertyValue('--sys').trim() }, { opacity: 1, duration: .01, stagger: st, delay: .6 });
+    gsap.to(letters, { color: getComputedStyle(document.documentElement).getPropertyValue('--text').trim(), duration: .9, ease: 'power1.out', stagger: st, delay: .85, clearProps: 'color' });
+    gsap.fromTo(acts.children, { y: 10, opacity: 0 }, { y: 0, opacity: 1, duration: .5, ease: 'power3.out', stagger: .06, delay: .65 + letters.length * .011 });
+  }
+  sheetReturn = document.activeElement;
+  $('#sheet-x').focus({ preventScroll: true });
+}
+function closeSheet() {
+  if (sheetChip < 0) return;
+  const i = sheetChip; sheetChip = -1;
+  const done = () => { sheet.hidden = true; document.documentElement.style.overflow = ''; if (onSheetClose) onSheetClose(i); if (sheetReturn && sheetReturn.focus) sheetReturn.focus({ preventScroll: true }); sheetReturn = null; };
+  if (window.gsap && !reduced) {
+    // the reverse: the content goes, the sheet folds back into the notification's band, then that one shatters
+    gsap.killTweensOf([sheetCard, ...sheetCard.children]);
+    gsap.to(sheetCard.children, { opacity: 0, duration: .15 });
+    gsap.to('#sheet-bg', { opacity: 0, duration: .4, delay: .1 });
+    gsap.fromTo(sheetCard, { clipPath: 'inset(0px 0px 0px 0px round 26px)' }, { clipPath: sheetBand || 'inset(40% 0px 40% 0px round 24px)', duration: .35, ease: 'power3.inOut', onComplete: () => { gsap.set(sheetCard, { clearProps: 'clipPath' }); gsap.set(sheetCard.children, { clearProps: 'opacity' }); done(); } });
+  } else done();
+}
+$('#sheet-x').addEventListener('click', closeSheet);
+$('#sheet-bg').addEventListener('click', closeSheet);
+addEventListener('keydown', e => { if (e.key === 'Escape') closeSheet(); });
+
+/* ═══════════════ scroll → story position ═══════════════ */
+let tops = [];
+function measure() { tops = $$('.beat').map(s => s.offsetTop); }
+function storyPos() {
+  const y = window.scrollY;
+  const n = tops.length;
+  if (!n) return 0;
+  for (let i = 0; i < n - 1; i++) {
+    if (y < tops[i + 1]) return Math.max(0, i + (y - tops[i]) / (tops[i + 1] - tops[i]));
+  }
+  return n - 1;
+}
+const hasGsap = !!window.gsap && !reduced;
+let lastBeat = -1;
+function revealBeat(i) {
+  if (!hasGsap) return;
+  const copy = $$('.beat .copy')[i];
+  if (!copy) return;
+  const chars = copy.querySelectorAll('.ch'), words = copy.querySelectorAll('.pw');
+  // the system's caret: blinks at the end of the heading while it is being written, then leaves
+  const head = copy.querySelector('h1, h2');
+  if (head) {
+    let caret = head.querySelector('.caret');
+    if (!caret) { caret = document.createElement('span'); caret.className = 'caret'; caret.setAttribute('aria-hidden', 'true'); head.appendChild(caret); }
+    caret.classList.add('on'); clearTimeout(caret._t); caret._t = setTimeout(() => caret.classList.remove('on'), 2400);
+  }
+  const kick = copy.querySelector('.kicker'), rest = copy.querySelectorAll('.outs li, .ctas, .unread');
+  gsap.killTweensOf([...chars, ...words, ...rest, kick].filter(Boolean));
+  // the mono line decodes itself; in Hebrew the random glyphs would jump around, so it just fades in
+  if (kick) scramble(kick, T[lang][kick.dataset.t], 1.3, .15);
+  const tl = gsap.timeline();
+  tl.fromTo(chars, { yPercent: 110, rotateX: -88, opacity: 0, filter: 'blur(8px)' },
+    { yPercent: 0, rotateX: 0, opacity: 1, filter: 'blur(0px)', duration: 1.05, ease: 'expo.out', stagger: .022, clearProps: 'filter' }, .1);
+  tl.fromTo(words, { y: 12, opacity: 0, filter: 'blur(6px)' },
+    { y: 0, opacity: 1, filter: 'blur(0px)', duration: .8, ease: 'power3.out', stagger: .016, clearProps: 'filter' }, .4);
+  tl.fromTo(rest, { y: 16, opacity: 0 }, { y: 0, opacity: 1, duration: .8, ease: 'power3.out', stagger: .07 }, .6);
+}
+// [fade-in start, end, fade-out start, end] in story units: ring → burst → free-fall → orbits → landing
+const TEXT_WINDOWS = [[-1, -1, .58, .7], [.76, .9, 1.3, 1.42], [1.46, 1.6, 2.4, 2.52], [2.55, 2.7, 3.2, 3.34]];
+const sstepT = (a, b, x) => { const t = Math.min(1, Math.max(0, (x - a) / (b - a))); return t * t * (3 - 2 * t); };
+const pinned = $$('.beat.pin .copy');
+function paintCopy() {
+  const s = storyPos();
+  let beat = 0, best = -1;
+  // each step's text owns a window tied to its moment in the scene; windows never overlap
+  const ops = pinned.map((c, i) => {
+    const [i0, i1, o0, o1] = TEXT_WINDOWS[i];
+    const vin = i0 < 0 ? 1 : sstepT(i0, i1, s);
+    return Math.min(vin, 1 - sstepT(o0, o1, s));
+  });
+  ops.forEach((o, i) => { if (o > best) { best = o; beat = i; } });
+  if (s > 3.55) beat = 4;
+  if (beat !== lastBeat && (best > .5 || beat === 4)) { lastBeat = beat; revealBeat(beat); }
+  pinned.forEach((c, i) => {
+    const d = s - i, o = ops[i];
+    c.style.setProperty('--o', o.toFixed(3));
+    c.style.setProperty('--v', o > .02 ? 'visible' : 'hidden');
+    c.style.setProperty('--dy', (reduced ? 0 : -Math.sign(d || 1) * (1 - o) * 40).toFixed(1) + 'px');
+  });
+}
+// steps are sized in screen heights: after a resize the same scrollY is another moment — keep the place (QA 28.09)
+addEventListener('resize', () => {
+  const s0 = storyPos(), old = tops.join();
+  measure();
+  if (tops.join() !== old && tops.length > 1) window.scrollTo({ top: Math.round(yAt(Math.min(s0, 4))), behavior: 'instant' });
+  paintCopy();
+});
+addEventListener('scroll', paintCopy, { passive: true });
+document.addEventListener('card:rewound', () => { lastBeat = -1; paintCopy(); });
+measure(); paintCopy();
+
+// Gates (desktop): a timed moment — burst, orbits, landing — holds the page at its step while it plays.
+// A fast flick would otherwise carry the visitor past it and they'd arrive once it's over (DEFECTS §25).
+// Only the visitor's own wheel/keys engage a gate; the scrollbar and code jump freely.
+const GATES = [{ at: .9, hold: 1300 }, { at: 1.62, hold: 1200 }, { at: 2.7, hold: 1500 }];
+const gateOK = matchMedia('(pointer: fine)').matches && !reduced;
+let gate = null, gateS = storyPos(), lastInput = -1e9, lastWheel = -1e9;
+const yAt = s => { const i = Math.min(Math.floor(s), tops.length - 2); return tops[i] + (s - i) * (tops[i + 1] - tops[i]); };
+window.__gate = () => gate && { at: gate.at, until: gate.until };
+function gateOpen(now) { return !gate || (now >= gate.until && now - lastWheel > 220) || now >= gate.until + 1000; }
+addEventListener('wheel', e => {
+  const now = performance.now();
+  lastInput = lastWheel = now;
+  if (!gate) return;
+  if (e.deltaY < 0) { gate = null; return; }          // going back up always works
+  if (!gateOpen(now)) e.preventDefault(); else gate = null;
+}, { passive: false });
+addEventListener('keydown', e => { if (/^(PageDown|PageUp|ArrowDown|ArrowUp|Space|Home|End)$/.test(e.code)) lastInput = performance.now(); });
+addEventListener('scroll', () => {
+  const now = performance.now(), s = storyPos();
+  if (gate) {
+    if (gateOpen(now)) gate = null;
+    else if (s < gate.at - .01) gate = null;          // the visitor went back
+    else if (s > gate.at + .005) { window.scrollTo({ top: yAt(gate.at), behavior: 'instant' }); gateS = gate.at; return; }
+  }
+  if (!gate && gateOK && now - lastInput < 400) {
+    // a margin below the stop: rounding at the stop itself must not re-arm it again and again (DEFECTS §25)
+    const g = GATES.find(g => gateS < g.at - .01 && s >= g.at);   // the first one crossed, even if the flick jumped several
+    if (g) { gate = { at: g.at, until: now + g.hold }; window.scrollTo({ top: yAt(g.at), behavior: 'instant' }); gateS = g.at; return; }
+  }
+  gateS = s;
+}, { passive: true });
+document.addEventListener('card:rewound', () => { gate = null; gateS = storyPos(); });
+
+// «next»: runs the page to the next moment of the story at the pace the scenes were made for — a human
+// scroll comes in any speed and knocks the timed moments off (Tomer 27.09). Your own wheel, touch or keys
+// take over at once. Stops: burst text, orbits, the three screens, the finale.
+const NEXT_STOPS = [.9, 1.62, 2.7, 4];
+const nextBtn = $('#next');
+let run = null;
+const easeRun = t => t < .5 ? 4 * t * t * t : 1 - Math.pow(-2 * t + 2, 3) / 2;
+function stopRun() { if (!run) return; cancelAnimationFrame(run.raf); run = null; nextBtn.classList.remove('run'); paintNext(); }
+function goNext() {
+  if (run) return;
+  const s = storyPos(), to = NEXT_STOPS.find(x => x > s + .03);
+  if (to == null) return;
+  const y0 = window.scrollY, y1 = Math.min(yAt(to), document.documentElement.scrollHeight - innerHeight);
+  if (reduced) { window.scrollTo({ top: y1, behavior: 'instant' }); return; }
+  // about 2.2 s per step of the story: the ring has time to build up, the orbits to settle
+  const dur = Math.min(3.2, Math.max(1.6, 2.2 * (to - s))) * 1000, t0 = performance.now();
+  run = { raf: 0 };
+  nextBtn.classList.add('run');
+  const step = now => {
+    if (!run) return;
+    const k = Math.min(1, (now - t0) / dur);
+    window.scrollTo({ top: y0 + (y1 - y0) * easeRun(k), behavior: 'instant' });
+    if (k < 1) run.raf = requestAnimationFrame(step); else stopRun();
+  };
+  run.raf = requestAnimationFrame(step);
+}
+nextBtn.addEventListener('click', goNext);
+['wheel', 'touchstart'].forEach(ev => addEventListener(ev, stopRun, { passive: true }));
+addEventListener('keydown', e => { if (/^(PageDown|PageUp|ArrowDown|ArrowUp|Space|Home|End)$/.test(e.code)) stopRun(); });
+// out of the way in the finale, during the rewind and while a notification is open
+function paintNext() {
+  const off = storyPos() > 3.5 || document.documentElement.classList.contains('rewinding') || !sheet.hidden;
+  nextBtn.classList.toggle('off', off && !run);
+}
+addEventListener('scroll', paintNext, { passive: true });
+new MutationObserver(paintNext).observe(document.documentElement, { attributes: true, attributeFilter: ['class'] });
+new MutationObserver(paintNext).observe(sheet, { attributes: true, attributeFilter: ['hidden'] });
+document.addEventListener('card:rewound', paintNext);
+paintNext();
+
+/* ═══════════════ 3D ═══════════════ */
+let scene3d = null;
+const canvas = $('#gl');
+if (!window.THREE || !(() => { try { return !!(canvas.getContext('webgl2') || canvas.getContext('webgl')); } catch (e) { return false; } })()) {
+  document.documentElement.classList.add('nogl');
+  canvas.remove();
+  return;
+}
+
+const fontsReady = Promise.race([
+  Promise.all([
+    document.fonts.load('700 100px "IBM Plex Sans"'), document.fonts.load('600 40px "IBM Plex Sans"'),
+    document.fonts.load('400 40px "IBM Plex Mono"'), document.fonts.load('500 40px "IBM Plex Mono"'),
+    document.fonts.load('600 40px "IBM Plex Sans Hebrew"'), document.fonts.load('700 40px "IBM Plex Sans Hebrew"')
+  ]),
+  new Promise(r => setTimeout(r, 2500))
+]);
+
+fontsReady.then(() => { scene3d = build(); measure(); });
+
+function build() {
+  const {
+    WebGLRenderer, Scene, PerspectiveCamera, Group, Mesh, Color, Vector2, Vector3,
+    MeshStandardMaterial, MeshBasicMaterial, ShapeGeometry, ExtrudeGeometry, PlaneGeometry, Shape,
+    CanvasTexture, PMREMGenerator, DirectionalLight, AmbientLight, BufferGeometry, BufferAttribute,
+    Points, ShaderMaterial, AdditiveBlending, PointsMaterial, Sprite, SpriteMaterial, Raycaster,
+    LineLoop, LineBasicMaterial, MathUtils
+  } = THREE;
+
+  const mobile = matchMedia('(pointer: coarse)').matches;
+  const renderer = new WebGLRenderer({ canvas, antialias: true, alpha: true, powerPreference: 'high-performance' });
+  renderer.setClearColor(0x000000, 0);
+  renderer.outputEncoding = THREE.sRGBEncoding;
+  renderer.toneMapping = THREE.ACESFilmicToneMapping;
+  renderer.toneMappingExposure = 1.05;
+  const maxAniso = renderer.capabilities.getMaxAnisotropy();
+
+  const scene = new Scene();
+  const camera = new PerspectiveCamera(35, 1, 0.1, 100);
+  const world = new Group(); scene.add(world);
+
+  /* ── studio light as an environment: a warm lamp, a window strip, a dim floor ── */
+  (function environment() {
+    const env = new Scene();
+    env.background = new Color(0x050403);
+    const box = (w, h, color, x, y, z, ry = 0, rx = 0) => {
+      const m = new Mesh(new PlaneGeometry(w, h), new MeshBasicMaterial({ color, side: THREE.DoubleSide }));
+      m.position.set(x, y, z); m.rotation.y = ry; m.rotation.x = rx; env.add(m);
+    };
+    box(6, 2.2, new Color(5.0, 3.6, 1.9), -3, 4.5, 3, 0.5, Math.PI / 2.6);   // lamp softbox above-left
+    box(1.0, 7, new Color(1.6, 1.45, 1.2), 6, 0, 1, -Math.PI / 2);           // window strip right
+    box(0.6, 6, new Color(2.4, 1.6, 0.8), -6, 0.5, -1, Math.PI / 2);          // warm rim left
+    box(14, 14, new Color(0.10, 0.08, 0.05), 0, -5, 0, 0, -Math.PI / 2);      // table
+    const pm = new PMREMGenerator(renderer);
+    scene.environment = pm.fromScene(env, 0.035).texture;
+    pm.dispose();
+  })();
+
+  const key = new DirectionalLight(0xffe2b0, 1.1); key.position.set(-3, 4, 5); scene.add(key);
+  const sweep = new DirectionalLight(0xfff0d0, 0); scene.add(sweep);
+  scene.add(new AmbientLight(0xfff0dd, 0.12));
+
+  /* ── helpers ── */
+  const rand = (seed => () => { seed |= 0; seed = seed + 0x6D2B79F5 | 0; let t = Math.imul(seed ^ seed >>> 15, 1 | seed); t = t + Math.imul(t ^ t >>> 7, 61 | t) ^ t; return ((t ^ t >>> 14) >>> 0) / 4294967296; });
+  const clamp01 = x => Math.min(1, Math.max(0, x));
+  const seg = (s, a, b) => clamp01((s - a) / (b - a));
+  const eio = t => t < .5 ? 4 * t * t * t : 1 - Math.pow(-2 * t + 2, 3) / 2;
+  const eout = t => 1 - Math.pow(1 - t, 3);
+  function roundRectShape(w, h, r) {
+    const s = new Shape(), x = -w / 2, y = -h / 2;
+    s.moveTo(x + r, y); s.lineTo(x + w - r, y); s.quadraticCurveTo(x + w, y, x + w, y + r);
+    s.lineTo(x + w, y + h - r); s.quadraticCurveTo(x + w, y + h, x + w - r, y + h);
+    s.lineTo(x + r, y + h); s.quadraticCurveTo(x, y + h, x, y + h - r);
+    s.lineTo(x, y + r); s.quadraticCurveTo(x, y, x + r, y);
+    return s;
+  }
+  function planarUV(geo, w, h) {
+    const p = geo.attributes.position, uv = geo.attributes.uv;
+    for (let i = 0; i < p.count; i++) uv.setXY(i, (p.getX(i) + w / 2) / w, (p.getY(i) + h / 2) / h);
+    uv.needsUpdate = true;
+  }
+  function rr(ctx, x, y, w, h, r) {
+    ctx.beginPath(); ctx.moveTo(x + r, y); ctx.arcTo(x + w, y, x + w, y + h, r); ctx.arcTo(x + w, y + h, x, y + h, r);
+    ctx.arcTo(x, y + h, x, y, r); ctx.arcTo(x, y, x + w, y, r); ctx.closePath();
+  }
+  function tex(cv, color = true) {
+    const t = new CanvasTexture(cv);
+    if (color) t.encoding = THREE.sRGBEncoding;
+    t.anisotropy = maxAniso;
+    return t;
+  }
+  const mk = (w, h) => { const c = document.createElement('canvas'); c.width = w; c.height = h; return c; };
+  const fontFor = (weight, px, l = lang) => `${weight} ${px}px ${l === 'he' ? '"IBM Plex Sans Hebrew", "Segoe UI", sans-serif' : '"IBM Plex Sans", "Segoe UI", sans-serif'}`;
+  const mono = (weight, px) => `${weight} ${px}px "IBM Plex Mono", Consolas, monospace`;
+  function fitText(ctx, text, maxW, weight, px, family) {
+    let size = px;
+    do { ctx.font = family(weight, size); size -= 2; } while (ctx.measureText(text).width > maxW && size > 12);
+  }
+
+  /* ═════ the card ═════ */
+  const CW = 3.6, CH = 2.0, CR = 0.13, CD = 0.05, BV = 0.018;
+  const TW = 2048, TH = Math.round(TW * CH / CW);
+
+  // one paint routine → three maps (colour, metal/rough, relief) so every groove lines up
+  const PAL = {
+    // text = light inlay, acc = patina inlay (the flying tile, the last dot); both read as metal set into paint
+    front: {
+      color: { base: '#2C3330', text: '#E6E4DE', acc: '#5FB39A', soft: '#A3AAA6', eng: '#0E100F' },   // dark gunmetal: a metal face reflects the studio in its own colour, a matte one turns grey
+      mr:    { base: 'rgb(0,110,235)', text: 'rgb(0,70,255)', acc: 'rgb(0,70,255)', soft: 'rgb(0,90,220)', eng: 'rgb(0,225,30)' },
+      bump:  { base: '#808080', text: '#a2a2a2', acc: '#a2a2a2', soft: '#999999', eng: '#303030' }
+    },
+        back: {
+      // the back is the patina side: graphite face, verdigris back — one pair, two different sides (Tomer 26.09:
+      // "in tone" meant "goes together", not "the same"); dark engraving on it, the flying tile in light
+      color: { base: '#4A7A6D', text: '#0E1211', acc: '#E6E4DE', soft: '#14261F', eng: '#2A5347', field: '#E6E4DE', dots: '#101412' },
+      mr:    { base: 'rgb(0,105,235)', text: 'rgb(0,160,60)', acc: 'rgb(0,70,255)', soft: 'rgb(0,160,60)', eng: 'rgb(0,225,30)', field: 'rgb(0,150,120)', dots: 'rgb(0,225,30)' },
+      bump:  { base: '#808080', text: '#707070', acc: '#a2a2a2', soft: '#747474', eng: '#303030', field: '#8a8a8a', dots: '#404040' }   // dark lettering sits flush, a raised edge blurred it
+    }
+  };
+  function brushed(ctx, mode, seed, lighter) {
+    const r = rand(seed);
+    for (let y = 0; y < TH; y += 2) {
+      const a = r();
+      if (mode === 'color') ctx.fillStyle = a > .5 ? `rgba(255,240,210,${(a - .5) * (lighter ? .05 : .022)})` : `rgba(0,0,0,${(.5 - a) * .05})`;
+      else if (mode === 'mr') ctx.fillStyle = `rgba(0,${a > .5 ? 255 : 0},0,${Math.abs(a - .5) * .07})`;
+      else ctx.fillStyle = `rgba(${a > .5 ? '255,255,255' : '0,0,0'},${Math.abs(a - .5) * .012})`;
+      ctx.fillRect(0, y, TW, 1 + (r() > .8 ? 1 : 0));
+    }
+  }
+  // the brand mark: four tiles, three in place, the fourth flying in (outline, tilted)
+  function mark(ctx, x, y, s, fill, acc) {
+    const u = s / 48, r = 2.5 * u;
+    ctx.save(); ctx.fillStyle = fill;
+    [[6, 6], [26, 6], [6, 26]].forEach(([a, b]) => { rr(ctx, x + a * u, y + b * u, 16 * u, 16 * u, r); ctx.fill(); });
+    ctx.translate(x + 36.5 * u, y + 35.5 * u); ctx.rotate(14 * Math.PI / 180);
+    ctx.strokeStyle = acc; ctx.lineWidth = 3 * u; rr(ctx, -8 * u, -8 * u, 16 * u, 16 * u, r); ctx.stroke();
+    ctx.restore();
+  }
+  // the surname: dotless ı, then our dots — a ring over the first i, a patina dot over the second
+  function surname(ctx, x, base, px, fill, acc) {
+    const t = 'ıukhvıdov';
+    ctx.font = `700 ${px}px "IBM Plex Sans", "Segoe UI", sans-serif`;
+    if ('letterSpacing' in ctx) ctx.letterSpacing = `${-.03 * px}px`;
+    ctx.fillStyle = fill; ctx.textAlign = 'left'; ctx.fillText(t, x, base);
+    const at = k => x + ctx.measureText(t.slice(0, k)).width + (ctx.measureText('ı').width - (-.03 * px)) / 2;
+    const cy = base - .665 * px, rad = .105 * px, lw = .055 * px;
+    ctx.strokeStyle = fill; ctx.lineWidth = lw; ctx.beginPath(); ctx.arc(at(0), cy, rad - lw / 2, 0, Math.PI * 2); ctx.stroke();
+    ctx.fillStyle = acc; ctx.beginPath(); ctx.arc(at(5), cy, rad, 0, Math.PI * 2); ctx.fill();
+    if ('letterSpacing' in ctx) ctx.letterSpacing = '0px';
+  }
+  function paintFront(ctx, mode) {
+    const P = PAL.front[mode], m = 128;
+    ctx.fillStyle = P.base; ctx.fillRect(0, 0, TW, TH);
+    // engraved frame + registration ticks: the card is drawn like a part on a drawing
+    ctx.strokeStyle = P.eng; ctx.lineWidth = 3;
+    rr(ctx, 56, 56, TW - 112, TH - 112, 44); ctx.stroke();
+    ctx.fillStyle = P.eng;
+    [[56, TH / 2], [TW - 56, TH / 2]].forEach(([x, y]) => ctx.fillRect(x - 18, y - 1.5, 36, 3));
+    [[TW / 2, 56], [TW / 2, TH - 56]].forEach(([x, y]) => ctx.fillRect(x - 1.5, y - 18, 3, 36));
+    // inlay
+    mark(ctx, m, m, 132, P.text, P.acc);
+    ctx.fillStyle = P.soft; ctx.textBaseline = 'alphabetic';
+    ctx.font = mono(500, 34); ctx.textAlign = 'right';
+    if ('letterSpacing' in ctx) ctx.letterSpacing = '6px';
+    ctx.fillText('90 × 50 MM · IL · 2026', TW - m, m + 76);
+    if ('letterSpacing' in ctx) ctx.letterSpacing = '0px';
+    surname(ctx, m - 8, TH * .66, 300, P.text, P.acc);
+    ctx.fillStyle = P.soft; ctx.textAlign = 'left';
+    ctx.font = '500 52px "IBM Plex Sans", sans-serif';
+    ctx.fillText('Websites · Bots · Systems · Automation', m, TH * .66 + 118);
+  }
+  let qr = null;
+  try { if (window.qrcode) { qr = qrcode(0, 'M'); qr.addData('https://wa.me/972505760542'); qr.make(); } } catch (e) { qr = null; }
+  function paintBack(ctx, mode) {
+    const P = PAL.back[mode], m = 128;
+    ctx.fillStyle = P.base; ctx.fillRect(0, 0, TW, TH);
+    ctx.strokeStyle = P.eng; ctx.lineWidth = 3;
+    rr(ctx, 56, 56, TW - 112, TH - 112, 44); ctx.stroke();
+    ctx.textAlign = 'left'; ctx.textBaseline = 'alphabetic';
+    mark(ctx, m, m, 96, P.text, P.acc);
+    ctx.fillStyle = P.text;
+    if ('letterSpacing' in ctx) ctx.letterSpacing = '-3px';
+    ctx.font = '700 112px "IBM Plex Sans", sans-serif';
+    ctx.fillText('Tomer Iukhvidov', m, 440);
+    if ('letterSpacing' in ctx) ctx.letterSpacing = '1px';
+    ctx.fillStyle = P.soft; ctx.font = mono(600, 52);
+    ctx.fillText('+972 50-576-0542', m, 600);
+    ctx.fillText('t.me/iukhvidov2', m, 686);
+    ctx.fillText('iukhvidov@tomerisr.org.il', m, 772);
+    if ('letterSpacing' in ctx) ctx.letterSpacing = '0px';
+    ctx.fillStyle = P.acc; ctx.fillRect(m, TH - m - 30, 120, 10);
+    if (qr) {
+      const n = qr.getModuleCount(), size = 680, cell = size / (n + 2);
+      const x0 = TW - m - size, y0 = (TH - size) / 2;
+      ctx.fillStyle = P.field; rr(ctx, x0, y0, size, size, 20); ctx.fill();
+      ctx.fillStyle = P.dots;
+      for (let r = 0; r < n; r++) for (let c = 0; c < n; c++)
+        if (qr.isDark(r, c)) ctx.fillRect(Math.floor(x0 + (c + 1) * cell), Math.floor(y0 + (r + 1) * cell), Math.ceil(cell), Math.ceil(cell));
+    }
+  }
+  const FACE_K = mobile ? .5 : .75;
+  function faceMaterial(paint) {
+    const c = mk(Math.round(TW * FACE_K), Math.round(TH * FACE_K)), r = mk(c.width, c.height), b = mk(c.width, c.height);
+    [[c, 'color'], [r, 'mr'], [b, 'bump']].forEach(([cv, mode]) => { const x = cv.getContext('2d'); x.scale(FACE_K, FACE_K); paint(x, mode); });
+    const mrt = tex(r, false);
+    return new MeshStandardMaterial({
+      map: tex(c), metalnessMap: mrt, roughnessMap: mrt, bumpMap: tex(b, false), bumpScale: 0.35,
+      metalness: 1, roughness: 1, envMapIntensity: 1.25
+    });
+  }
+
+  const card = new Group();
+  const body = new ExtrudeGeometry(roundRectShape(CW, CH, CR), { depth: CD, bevelEnabled: true, bevelThickness: BV, bevelSize: BV, bevelSegments: 4, curveSegments: 14 });
+  body.translate(0, 0, -CD / 2);
+  card.add(new Mesh(body, new MeshStandardMaterial({ color: 0xb98a3e, metalness: 1, roughness: .32, envMapIntensity: 1.3 })));
+  const faceZ = CD / 2 + BV + 0.0015;
+  const faceGeo = new ShapeGeometry(roundRectShape(CW - .004, CH - .004, CR), 14); planarUV(faceGeo, CW, CH);
+  const front = new Mesh(faceGeo, faceMaterial(paintFront)); front.position.z = faceZ; card.add(front);
+  const backGeo = faceGeo.clone();
+  const back = new Mesh(backGeo, faceMaterial(paintBack)); back.rotation.y = Math.PI; back.position.z = -faceZ; card.add(back);
+  world.add(card);
+
+  /* ═════ the core: where the chaos goes ═════ */
+  const core = new Group(); world.add(core);
+  const NP = mobile ? 1100 : 1800;
+  const pos = new Float32Array(NP * 3), seeds = new Float32Array(NP);
+  const rnd = rand(3);
+  for (let i = 0; i < NP; i++) {
+    const y = 1 - (i / (NP - 1)) * 2, rad = Math.sqrt(1 - y * y), th = i * 2.399963;
+    const j = 0.82 + rnd() * 0.3;
+    pos[i * 3] = Math.cos(th) * rad * j; pos[i * 3 + 1] = y * j; pos[i * 3 + 2] = Math.sin(th) * rad * j;
+    seeds[i] = rnd();
+  }
+  const pg = new BufferGeometry();
+  pg.setAttribute('position', new BufferAttribute(pos, 3));
+  pg.setAttribute('aSeed', new BufferAttribute(seeds, 1));
+  const coreMat = new ShaderMaterial({
+    transparent: true, depthWrite: false, blending: AdditiveBlending,
+    uniforms: { uTime: { value: 0 }, uAmp: { value: 0 }, uPulse: { value: 0 }, uPR: { value: 1 }, uColor: { value: new Color(0xA39BD6) } },
+    vertexShader: `
+      uniform float uTime, uAmp, uPulse, uPR; attribute float aSeed; varying float vA;
+      void main(){
+        vec3 p = position;
+        float n = sin(uTime*1.2 + aSeed*6.2831)*0.05;
+        float r = (0.3 + 0.7*uAmp) * (1.0 + n + uPulse*0.22*sin(aSeed*23.0 + uTime*9.0));
+        vec4 mv = modelViewMatrix * vec4(p*r, 1.0);
+        gl_Position = projectionMatrix * mv;
+        gl_PointSize = (1.6 + 2.6*fract(aSeed*7.31)) * uPR * (7.0 / -mv.z);
+        vA = uAmp * (0.3 + 0.7*fract(aSeed*3.7)) * (1.0 + uPulse*0.8);
+      }`,
+    fragmentShader: `
+      uniform vec3 uColor; varying float vA;
+      void main(){ float d = length(gl_PointCoord - 0.5); float a = smoothstep(0.5, 0.0, d) * vA; gl_FragColor = vec4(uColor * a, a); }`
+  });
+  core.add(new Points(pg, coreMat));
+  const glowCv = mk(256, 256), gctx = glowCv.getContext('2d');
+  const gr = gctx.createRadialGradient(128, 128, 0, 128, 128, 128);
+  gr.addColorStop(0, 'rgba(232,229,250,1)'); gr.addColorStop(.25, 'rgba(163,155,214,.45)'); gr.addColorStop(1, 'rgba(163,155,214,0)');
+  gctx.fillStyle = gr; gctx.fillRect(0, 0, 256, 256);
+  const glow = new Sprite(new SpriteMaterial({ map: tex(glowCv), blending: AdditiveBlending, depthWrite: false, transparent: true, opacity: 0 }));
+  core.add(glow);
+  const rings = [];
+  for (let k = 0; k < 3; k++) {
+    const g = new BufferGeometry(), n = 160, a = new Float32Array(n * 3), R = 1.5 + k * 0.32;
+    for (let i = 0; i < n; i++) { const t = i / n * Math.PI * 2; a[i * 3] = Math.cos(t) * R; a[i * 3 + 1] = Math.sin(t) * R; }
+    g.setAttribute('position', new BufferAttribute(a, 3));
+    const ring = new LineLoop(g, new LineBasicMaterial({ color: 0xA39BD6, transparent: true, opacity: 0, depthWrite: false }));
+    ring.userData.R = R; ring.rotation.set(.35 + k * .45, k * .7 - .5, 0); core.add(ring); rings.push(ring);
+  }
+  // shock ring for the moment the card bursts
+  const shockGeo = new BufferGeometry(), sa = new Float32Array(200 * 3);
+  for (let i = 0; i < 200; i++) { const t = i / 200 * Math.PI * 2; sa[i * 3] = Math.cos(t); sa[i * 3 + 1] = Math.sin(t); }
+  shockGeo.setAttribute('position', new BufferAttribute(sa, 3));
+  const shock = new LineLoop(shockGeo, new LineBasicMaterial({ color: 0xA39BD6, transparent: true, opacity: 0, depthWrite: false }));
+  world.add(shock);
+
+  /* ═════ chips: the daily chaos, as real notifications ═════ */
+  const CHW = 1.64, CHH = 0.5, CPW = 720, CPH = Math.round(CPW * CHH / CHW);
+  const APPS = {
+    wa:     { name: 'WhatsApp',    bg: '#25D366', icon: 'bubble' },
+    gmail:  { name: 'Gmail',       bg: '#EA4335', icon: 'mail' },
+    gchat:  { name: 'Google Chat', bg: '#1E8E3E', icon: 'square' },
+    tg:     { name: 'Telegram',    bg: '#2AABEE', icon: 'plane' },
+    slack:  { name: 'Slack',       bg: '#611F69', icon: '#' },
+    cal:    { name: 'Calendar',    bg: '#4285F4', icon: '30' },
+    phone:  { name: 'Phone',       bg: '#34C759', icon: 'phone' },
+    sms:    { name: 'Messages',    bg: '#34C759', icon: 'bubble' },
+    insta:  { name: 'Instagram',   bg: ['#F58529', '#DD2A7B', '#8134AF'], icon: 'camera' },
+    sheets: { name: 'Sheets',      bg: '#0F9D58', icon: 'grid' },
+    drive:  { name: 'Drive',       bg: '#F4B400', icon: 'tri' }
+  };
+  // lane = where the scrap lands: 0 site (people who want to buy), 1 bot (chats, calls, voice), 2 system (money, stock, shifts, deadlines)
+  const POOL = [
+    ['wa', 'Dana · client', 'Is the site live yet?? Launch is tomorrow', 'now', 0],
+    ['gmail', 'Accounting', 'Invoice #2291 is 14 days overdue', '2m', 2],
+    ['gchat', 'Team', 'Who’s covering the Friday shift?', '5m', 2],
+    ['phone', 'Supplier', '3 missed calls', 'now', 1],
+    ['tg', 'Moshe', 'Sent the order — did you get it?', '1m', 1],
+    ['slack', '#orders', 'Stock sheet is wrong. Again.', '8m', 2],
+    ['cal', 'Deadline', 'Menu update — today, 18:00', 'in 2h', 2],
+    ['wa', '+972 54-…', 'How much is a website for a café?', 'now', 0],
+    ['insta', 'DM · noa.k', 'Do you deliver to Haifa?', '3m', 0],
+    ['sms', 'Bank', 'Payment received: ₪ 1,184', '12m', 2],
+    ['sheets', 'stock_final_v3 (1).xlsx', 'Avi edited 14 cells', '20m', 2],
+    ['gmail', 'Google Reviews', '★☆☆☆☆ “Nobody answers the phone”', '1h', 0],
+    ['wa', 'Chef', 'Out of oil — should I order more?', 'now', 1],
+    ['gchat', 'Avi', 'Client wants changes. AGAIN.', '4m', 2],
+    ['phone', 'Voicemail', '0:42 · new voice message', '7m', 1],
+    ['cal', 'Meeting', 'Supplier call in 10 minutes', 'soon', 2],
+    ['wa', 'Staff group', '12 new messages', 'now', 1],
+    ['gmail', 'Wolt', 'New order #A-2231', '1m', 2],
+    ['tg', 'Denis', 'Where are the documents to sign?', '9m', 1],
+    ['slack', 'Maya', 'Is the deadline moved to Sunday?', '6m', 2],
+    ['wa', 'Customer', 'Can you do 40 pcs for tomorrow?', 'now', 1],
+    ['sms', 'Courier', 'Delivery delayed until 16:00', '15m', 1],
+    ['insta', 'Instagram', '3 new comments on your post', '22m', 0],
+    ['gmail', 'Tax Authority', 'Reminder: file your report by 30.09', '1d', 2],
+    ['wa', 'New lead', 'Saw your ad — open on Friday?', 'now', 0],
+    ['drive', 'Drive', 'Contract_FINAL_final2.pdf shared', '31m', 2],
+    ['phone', 'Unknown', 'Incoming call…', 'now', 1],
+    ['gmail', 'Website form', 'New request: “need a quote”', '2m', 0]
+  ];
+  // the same 28 notifications in Russian and Hebrew: [who, text]; app and lane come from POOL
+  const POOL_L = {
+    ru: [
+      ['Дана · клиент', 'Сайт уже работает?? Запуск завтра'], ['Бухгалтерия', 'Счёт №2291 просрочен на 14 дней'],
+      ['Команда', 'Кто выйдет в пятницу?'], ['Поставщик', '3 пропущенных звонка'], ['Моше', 'Отправил заказ — получили?'],
+      ['#заказы', 'Таблица остатков опять врёт.'], ['Дедлайн', 'Обновить меню — сегодня, 18:00'],
+      ['+972 54-…', 'Сколько стоит сайт для кафе?'], ['DM · noa.k', 'Доставляете в Хайфу?'], ['Банк', 'Поступил платёж: ₪ 1 184'],
+      ['остатки_final_v3 (1).xlsx', 'Ави изменил 14 ячеек'], ['Отзывы Google', '★☆☆☆☆ «Никто не берёт трубку»'],
+      ['Шеф', 'Кончилось масло — заказать?'], ['Ави', 'Клиент хочет правки. ОПЯТЬ.'], ['Голосовая почта', '0:42 · новое голосовое'],
+      ['Встреча', 'Звонок поставщику через 10 минут'], ['Чат персонала', '12 новых сообщений'], ['Wolt', 'Новый заказ #A-2231'],
+      ['Денис', 'Где документы на подпись?'], ['Майя', 'Дедлайн перенесли на воскресенье?'], ['Клиент', 'Сможете 40 шт к завтра?'],
+      ['Курьер', 'Доставка задерживается до 16:00'], ['Instagram', '3 новых комментария к посту'],
+      ['Налоговая', 'Напоминание: отчёт до 30.09'], ['Новый клиент', 'Увидел рекламу — работаете в пятницу?'],
+      ['Drive', 'Вам открыли: Договор_ФИНАЛ_final2.pdf'], ['Неизвестный', 'Входящий звонок…'], ['Форма на сайте', 'Новая заявка: «нужна смета»']
+    ],
+    he: [
+      ['דנה · לקוחה', 'האתר כבר באוויר?? ההשקה מחר'], ['הנהלת חשבונות', 'חשבונית 2291 באיחור של 14 יום'],
+      ['צוות', 'מי עובד ביום שישי?'], ['ספק', '3 שיחות שלא נענו'], ['משה', 'שלחתי את ההזמנה, קיבלת?'],
+      ['#הזמנות', 'גיליון המלאי שוב לא נכון.'], ['דדליין', 'עדכון תפריט — היום, 18:00'],
+      ['+972 54-…', 'כמה עולה אתר לבית קפה?'], ['DM · noa.k', 'אתם עושים משלוחים לחיפה?'], ['בנק', 'התקבל תשלום: ₪ 1,184'],
+      ['מלאי_סופי_v3 (1).xlsx', 'אבי ערך 14 תאים'], ['ביקורות גוגל', '★☆☆☆☆ "אף אחד לא עונה לטלפון"'],
+      ['השף', 'נגמר השמן, להזמין?'], ['אבי', 'הלקוח רוצה שינויים. שוב.'], ['תא קולי', '0:42 · הודעה קולית חדשה'],
+      ['פגישה', 'שיחה עם הספק בעוד 10 דקות'], ['קבוצת הצוות', '12 הודעות חדשות'], ['Wolt', 'הזמנה חדשה #A-2231'],
+      ['דניס', 'איפה המסמכים לחתימה?'], ['מאיה', 'הדדליין זז ליום ראשון?'], ['לקוח', 'אפשר 40 יחידות למחר?'],
+      ['שליח', 'המשלוח מתעכב עד 16:00'], ['Instagram', '3 תגובות חדשות לפוסט'],
+      ['רשות המסים', 'תזכורת: הגשת דוח עד 30.09'], ['ליד חדש', 'ראיתי את המודעה — פתוחים בשישי?'],
+      ['Drive', 'שיתפו איתך: חוזה_סופי_final2.pdf'], ['מספר לא ידוע', 'שיחה נכנסת…'], ['טופס באתר', 'פנייה חדשה: "צריך הצעת מחיר"']
+    ]
+  };
+  const WHEN = {
+    ru: { now: 'сейчас', soon: 'скоро', 'in 2h': 'через 2 ч', '1h': '1 ч', '1d': 'вчера' },
+    he: { now: 'עכשיו', soon: 'בקרוב', 'in 2h': 'בעוד שעתיים', '1h': 'לפני שעה', '1d': 'אתמול' }
+  };
+  function entryOf(i) {
+    const [app, who, text, when, lane] = POOL[i];
+    if (lang === 'en') return [app, who, text, when, lane];
+    const m = /^(\d+)m$/.exec(when);
+    const w = WHEN[lang][when] || (m ? (lang === 'ru' ? m[1] + ' мин' : 'לפני ' + m[1] + ' דק׳') : when);
+    return [app, POOL_L[lang][i][0], POOL_L[lang][i][1], w, lane];
+  }
+  const isHe = t => /[\u0590-\u05FF]/.test(t);
+  const chipFont = (w, px, t) => `${w} ${px}px ${isHe(t) ? '"IBM Plex Sans Hebrew", sans-serif' : '"IBM Plex Sans", "Segoe UI", sans-serif'}`;
+  function appIcon(ctx, app, x, y, s) {
+    const A = APPS[app];
+    if (Array.isArray(A.bg)) { const g = ctx.createLinearGradient(x, y + s, x + s, y); A.bg.forEach((c, i) => g.addColorStop(i / (A.bg.length - 1), c)); ctx.fillStyle = g; }
+    else ctx.fillStyle = A.bg;
+    rr(ctx, x, y, s, s, s * .24); ctx.fill();
+    ctx.save(); ctx.strokeStyle = '#fff'; ctx.fillStyle = '#fff'; ctx.lineWidth = s * .075; ctx.lineCap = 'round'; ctx.lineJoin = 'round';
+    const P = (px, py) => [x + px * s, y + py * s];
+    const path = pts => { ctx.beginPath(); pts.forEach((p, i) => i ? ctx.lineTo(...P(...p)) : ctx.moveTo(...P(...p))); };
+    switch (A.icon) {
+      case 'bubble': ctx.beginPath(); ctx.arc(...P(.5, .48), s * .26, 0, Math.PI * 2); ctx.stroke(); path([[.3, .66], [.25, .78], [.4, .72]]); ctx.stroke(); break;
+      case 'square': rr(ctx, ...P(.24, .26), s * .52, s * .4, s * .08); ctx.stroke(); path([[.34, .66], [.34, .78], [.48, .66]]); ctx.stroke(); break;
+      case 'mail': rr(ctx, ...P(.2, .3), s * .6, s * .42, s * .05); ctx.stroke(); path([[.22, .33], [.5, .54], [.78, .33]]); ctx.stroke(); break;
+      case 'plane': path([[.2, .5], [.78, .26], [.66, .76], [.47, .6], [.2, .5]]); ctx.fill(); break;
+      case 'phone': rr(ctx, ...P(.35, .2), s * .3, s * .6, s * .07); ctx.stroke(); ctx.fillRect(...P(.44, .68), s * .12, s * .04); break;
+      case 'camera': rr(ctx, ...P(.24, .24), s * .52, s * .52, s * .15); ctx.stroke(); ctx.beginPath(); ctx.arc(...P(.5, .5), s * .12, 0, 7); ctx.stroke(); ctx.beginPath(); ctx.arc(...P(.66, .34), s * .03, 0, 7); ctx.fill(); break;
+      case 'grid': rr(ctx, ...P(.26, .22), s * .48, s * .56, s * .04); ctx.stroke(); ctx.lineWidth = s * .05; [.4, .58].forEach(v => { path([[.26, v], [.74, v]]); ctx.stroke(); }); path([[.44, .22], [.44, .78]]); ctx.stroke(); break;
+      case 'tri': path([[.5, .22], [.8, .72], [.2, .72]]); ctx.closePath(); ctx.stroke(); break;
+      default: ctx.font = `700 ${s * (A.icon.length > 1 ? .38 : .5)}px "IBM Plex Sans", sans-serif`; ctx.textAlign = 'center'; ctx.textBaseline = 'middle'; ctx.fillText(A.icon, ...P(.5, .54));
+    }
+    ctx.restore();
+  }
+  function paintChip(ctx, i) {
+    const [app, who, text, when] = entryOf(i), rtl = lang === 'he';
+    ctx.clearRect(0, 0, CPW, CPH);
+    ctx.fillStyle = 'rgba(40,45,43,.97)'; rr(ctx, 3, 3, CPW - 6, CPH - 6, 46); ctx.fill();
+    ctx.strokeStyle = 'rgba(255,248,230,.1)'; ctx.lineWidth = 2; ctx.stroke();
+    // in Hebrew the notification is mirrored: icon on the right, text flows right-to-left
+    const is = 104, ix = rtl ? CPW - 30 - is : 30, iy = (CPH - is) / 2;
+    appIcon(ctx, app, ix, iy, is);
+    const start = rtl ? ix - 26 : ix + is + 26, end = rtl ? 34 : CPW - 34, maxW = Math.abs(end - start);
+    ctx.textBaseline = 'alphabetic'; ctx.direction = 'ltr';
+    ctx.fillStyle = '#A3AAA6'; ctx.font = '500 23px "IBM Plex Mono", monospace';
+    if ('letterSpacing' in ctx) ctx.letterSpacing = '2px';
+    ctx.textAlign = rtl ? 'right' : 'left'; ctx.fillText(APPS[app].name.toUpperCase(), start, 58);
+    if ('letterSpacing' in ctx) ctx.letterSpacing = '0px';
+    ctx.direction = rtl ? 'rtl' : 'ltr'; ctx.font = rtl ? '500 22px "IBM Plex Sans Hebrew", sans-serif' : '500 23px "IBM Plex Mono", monospace';
+    ctx.textAlign = rtl ? 'left' : 'right'; ctx.fillText(when, end, 58);
+    const line = (t, y, w, px, col) => {
+      ctx.direction = rtl ? 'rtl' : 'ltr'; ctx.textAlign = rtl ? 'right' : 'left';
+      ctx.fillStyle = col; fitText(ctx, t, maxW, w, px, (ww, pp) => chipFont(ww, pp, t));
+      ctx.fillText(t, start, y);
+    };
+    line(who, 108, 600, 32, '#EEF0EC');
+    line(text, 156, 400, 31, '#C9CFCB');
+    ctx.direction = 'ltr';
+  }
+  const chips = [];
+  const cr = rand(21), N = POOL.length;
+  const laneCount = [0, 0, 0], laneSize = [0, 1, 2].map(L => POOL.filter(p => p[4] === L).length);
+  for (let i = 0; i < N; i++) {
+    const cv = mk(CPW, CPH); paintChip(cv.getContext('2d'), i);
+    const t = tex(cv);
+    const m = new Mesh(new PlaneGeometry(CHW, CHH), new MeshBasicMaterial({ map: t, transparent: true, depthWrite: false, toneMapped: false, opacity: 0 }));
+    const L = POOL[i][4];
+    const back = i % 5 === 2;   // about a fifth fly behind the card, the rest in front of it
+    chips.push({
+      mesh: m, cv, t, layer: back ? -1 : 1, zL: back ? -(1.05 + cr() * .8) : .85 + cr() * .85,
+      ang: (i / N) * Math.PI * 2 + cr() * .4,
+      rad: 1.35 + cr() * 1.8, y: (cr() - .5) * 3.2, w: (cr() > .5 ? 1 : -1) * (.12 + cr() * .16),
+      ph: cr() * 6.28, rz: (cr() - .5) * .6, ry: (cr() - .5) * .7, sc: .62 + cr() * .22, absorbed: false,
+      lane: L, slot: laneCount[L]++, of: laneSize[L],
+      oBurst: cr() * .42, oOrder: cr() * .4, oLand: .1 + cr() * .32, lift: (cr() - .3) * 1.2,
+      bigAng: (i / N) * Math.PI * 2, mode: 'idle', t0: 0, nudgeAt: -1, shattered: false, icon: null,
+      col: new Color(Array.isArray(APPS[POOL[i][0]].bg) ? APPS[POOL[i][0]].bg[1] : APPS[POOL[i][0]].bg)
+    });
+    world.add(m);
+  }
+  // the last two to land in each result card stay on it, stuck to its corners
+  // chip → [screen, place]: delivery question and quote request → site; "40 pcs" and the voicemail → bot; Wolt and the payment → system
+  const PLACES = { 8: 0, 27: 1, 20: 0, 14: 1, 17: 0, 9: 1 }, PLACE_ORDER = [8, 20, 17, 27, 14, 9];
+  chips.forEach((c, i) => { c.stick = i in PLACES ? PLACES[i] : -1; });
+  PLACE_ORDER.forEach((i, k) => { chips[i].oLand = .36 + k * .035; });   // still the last to land: .36–.535 + .44
+
+  /* ═════ results: what comes out ═════ */
+  const RW = 1.62, RH = 1.14, RPW = 1024, RPH = Math.round(RPW * RH / RW);
+  function wrap(ctx, text, maxW) {
+    const words = text.split(' '), lines = []; let cur = '';
+    words.forEach(w => { const t = cur ? cur + ' ' + w : w; if (ctx.measureText(t).width > maxW && cur) { lines.push(cur); cur = w; } else cur = t; });
+    if (cur) lines.push(cur); return lines;
+  }
+  function panelBase(ctx, cap) {
+    const rtl = lang === 'he';
+    ctx.clearRect(0, 0, RPW, RPH);
+    ctx.fillStyle = '#212423'; rr(ctx, 4, 4, RPW - 8, RPH - 8, 40); ctx.fill();
+    ctx.strokeStyle = 'rgba(163,155,214,.35)'; ctx.lineWidth = 3; ctx.stroke();
+    ctx.fillStyle = '#A39BD6'; ctx.textBaseline = 'alphabetic';
+    ctx.font = rtl ? '700 30px \"IBM Plex Sans Hebrew", sans-serif' : mono(500, 28);
+    ctx.textAlign = rtl ? 'right' : 'left'; ctx.direction = rtl ? 'rtl' : 'ltr';
+    if ('letterSpacing' in ctx) ctx.letterSpacing = rtl ? '0px' : '5px';
+    ctx.fillText(cap, rtl ? RPW - 52 : 52, 72);
+    if ('letterSpacing' in ctx) ctx.letterSpacing = '0px';
+    const tag = T[lang].demo; ctx.font = rtl ? '500 18px "IBM Plex Sans Hebrew", sans-serif' : mono(500, 17);
+    const tw = ctx.measureText(tag).width + 30, tx = rtl ? 52 : RPW - 52 - tw;
+    ctx.strokeStyle = 'rgba(236,232,223,.28)'; ctx.lineWidth = 2; rr(ctx, tx, 46, tw, 34, 17); ctx.stroke();
+    ctx.fillStyle = '#A3AAA6'; ctx.textAlign = 'center'; ctx.fillText(tag, tx + tw / 2, 69);
+    return rtl;
+  }
+  const dashed = (ctx, x, y, w, h, r, col) => { ctx.save(); ctx.setLineDash([10, 8]); ctx.lineWidth = 2.5; ctx.strokeStyle = col; rr(ctx, x, y, w, h, r); ctx.stroke(); ctx.restore(); };
+  function paintSite(ctx, st) {
+    const L = T[lang].site, rtl = panelBase(ctx, L.cap), X = (x, w = 0) => rtl ? RPW - x - w : x;
+    const A = rtl ? 'right' : 'left', dir = rtl ? 'rtl' : 'ltr';
+    // browser
+    ctx.fillStyle = '#F3EEE3'; rr(ctx, 52, 104, RPW - 104, RPH - 150, 22); ctx.fill();
+    ctx.fillStyle = '#E4DDCE'; rr(ctx, 52, 104, RPW - 104, 50, 22); ctx.fill(); ctx.fillRect(52, 130, RPW - 104, 24);
+    ['#E0A45A', '#C9C1B0', '#C9C1B0'].forEach((c, i) => { ctx.fillStyle = c; ctx.beginPath(); ctx.arc(X(86 + i * 26), 129, 7, 0, 7); ctx.fill(); });
+    ctx.fillStyle = '#F7F3EA'; rr(ctx, X(190, 380), 115, 380, 28, 14); ctx.fill();
+    ctx.fillStyle = '#8A8374'; ctx.font = mono(400, 18); ctx.direction = 'ltr'; ctx.textAlign = A; ctx.fillText(L.url, rtl ? RPW - 208 : 208, 135);
+    // nav
+    ctx.direction = dir; ctx.textAlign = A; ctx.fillStyle = '#1C1914'; ctx.font = '700 30px \"IBM Plex Sans", sans-serif'; ctx.fillText('Kora', X(84), 198);
+    // hero
+    ctx.textAlign = A; ctx.fillStyle = '#1C1914';
+    fitText(ctx, L.h[1], 440, 800, 46, (w, px) => fontFor(w, px)); const hs = ctx.font;
+    ctx.fillText(L.h[0], X(84), 262); ctx.font = hs; ctx.fillText(L.h[1], X(84), 314);
+    ctx.fillStyle = '#E0A45A'; ctx.font = fontFor(600, 19); ctx.fillText(L.rating, X(84), 352);
+    ctx.fillStyle = '#1C1914'; rr(ctx, X(84, 190), 372, 190, 52, 26); ctx.fill();
+    ctx.fillStyle = '#F3EEE3'; ctx.font = fontFor(600, 21); ctx.textAlign = 'center'; ctx.fillText(L.btn, X(84, 190) + 95, 405);
+    // hero picture: loaves on a warm board
+    const ix = X(560, 380), iy = 176, iw = 380, ih = 250;
+    const g = ctx.createLinearGradient(ix, iy, ix + iw, iy + ih); g.addColorStop(0, '#E9B774'); g.addColorStop(1, '#9A5A28');
+    ctx.fillStyle = g; rr(ctx, ix, iy, iw, ih, 18); ctx.fill();
+    ctx.save(); rr(ctx, ix, iy, iw, ih, 18); ctx.clip();
+    ctx.fillStyle = 'rgba(60,30,10,.25)'; ctx.fillRect(ix, iy + ih * .72, iw, ih * .28);
+    [[.3, .62, 110, 52], [.66, .58, 124, 58], [.5, .8, 150, 50]].forEach(([fx, fy, rw, rh]) => {
+      const cx = ix + iw * fx, cy2 = iy + ih * fy;
+      const lg = ctx.createRadialGradient(cx - rw * .3, cy2 - rh * .5, 4, cx, cy2, rw);
+      lg.addColorStop(0, '#F6D39A'); lg.addColorStop(.6, '#C27B38'); lg.addColorStop(1, '#6E3B16');
+      ctx.fillStyle = lg; ctx.beginPath(); ctx.ellipse(cx, cy2, rw, rh, 0, 0, 7); ctx.fill();
+      ctx.strokeStyle = 'rgba(255,236,200,.55)'; ctx.lineWidth = 4;
+      for (let k = -1; k <= 1; k++) { ctx.beginPath(); ctx.moveTo(cx + k * rw * .35 - rw * .12, cy2 - rh * .45); ctx.lineTo(cx + k * rw * .35 + rw * .12, cy2 + rh * .1); ctx.stroke(); }
+    });
+    ctx.restore();
+    // two widgets: FAQ and requests, each with one place that fills from a landing notification
+    const cardY = 452, cardH = 206, cw = 424, xs = [76, 524];
+    [[L.faqT, 0], [L.leadsT, 1]].forEach(([title, k]) => {
+      const x = X(xs[k], cw);
+      ctx.fillStyle = '#FFFDF8'; rr(ctx, x, cardY, cw, cardH, 18); ctx.fill(); ctx.strokeStyle = '#E4DDCE'; ctx.lineWidth = 2; ctx.stroke();
+      ctx.direction = dir; ctx.textAlign = A; ctx.fillStyle = '#8A8374'; ctx.font = rtl ? fontFor(600, 17) : mono(500, 16);
+      ctx.fillText(rtl ? title : title.toUpperCase(), rtl ? x + cw - 22 : x + 22, cardY + 34);
+      if (k === 1) {
+        const n = st.filled[1] ? '2' : '1'; ctx.fillStyle = '#E0A45A'; ctx.beginPath(); ctx.arc(rtl ? x + 26 : x + cw - 26, cardY + 28, 14, 0, 7); ctx.fill();
+        ctx.fillStyle = '#1C1914'; ctx.font = mono(500, 16); ctx.textAlign = 'center'; ctx.fillText(n, rtl ? x + 26 : x + cw - 26, cardY + 34);
+      }
+      const row = (y, a, b, strong) => {
+        ctx.direction = dir; ctx.textAlign = A; const tx = rtl ? x + cw - 22 : x + 22;
+        ctx.fillStyle = '#1C1914'; ctx.font = fontFor(600, 19); ctx.fillText(a, tx, y + 26);
+        ctx.fillStyle = strong ? '#B8742C' : '#8A8374'; ctx.font = fontFor(strong ? 600 : 400, 17); ctx.fillText(b, tx, y + 52);
+      };
+      if (k === 0) row(cardY + 50, L.q1, L.a1); else row(cardY + 50, L.lead1, '09:12', false);
+      ctx.fillStyle = '#EDE7DA'; ctx.fillRect(x + 22, cardY + 116, cw - 44, 2);
+      const sl = { x: x + 14, y: cardY + 126, w: cw - 28, h: 68 };
+      st.slots[k] = sl;
+      if (st.filled[k]) {
+        ctx.fillStyle = '#FBEBCB'; rr(ctx, sl.x, sl.y, sl.w, sl.h, 14); ctx.fill();
+        if (k === 0) row(sl.y - 6, L.q2, L.a2, true);
+        else {
+          row(sl.y - 6, L.lead2, '09:40', true);
+          ctx.font = fontFor(600, 15); const pw = ctx.measureText(L.fresh).width + 26, px2 = rtl ? sl.x + 12 : sl.x + sl.w - 12 - pw;
+          ctx.fillStyle = '#E0A45A'; rr(ctx, px2, sl.y + 20, pw, 28, 14); ctx.fill();
+          ctx.fillStyle = '#1C1914'; ctx.textAlign = 'center'; ctx.fillText(L.fresh, px2 + pw / 2, sl.y + 39);
+        }
+      } else dashed(ctx, sl.x, sl.y, sl.w, sl.h, 14, '#D2C9B6');
+    });
+    ctx.direction = 'ltr';
+  }
+  function paintBot(ctx, st) {
+    const L = T[lang].bot, rtl = panelBase(ctx, L.cap), X = (x, w = 0) => rtl ? RPW - x - w : x;
+    const A = rtl ? 'right' : 'left', dir = rtl ? 'rtl' : 'ltr', INK = '#111B21', GREY = '#667781', TEAL = '#00A884';
+    // warm wallpaper with a faint doodle, dark-green header
+    ctx.save(); rr(ctx, 52, 104, RPW - 104, RPH - 150, 22); ctx.clip();
+    ctx.fillStyle = '#EFE7DB'; ctx.fillRect(52, 104, RPW - 104, RPH - 150);
+    ctx.strokeStyle = 'rgba(120,96,60,.1)'; ctx.lineWidth = 2;
+    const dr = rand(5);
+    for (let k = 0; k < 80; k++) {
+      const x = 60 + dr() * (RPW - 120), y = 190 + dr() * (RPH - 250), r = 6 + dr() * 9;
+      ctx.beginPath();
+      if (k % 3 === 0) ctx.arc(x, y, r, 0, 7);
+      else if (k % 3 === 1) { ctx.moveTo(x - r, y); ctx.lineTo(x + r, y); ctx.moveTo(x, y - r); ctx.lineTo(x, y + r); }
+      else rr(ctx, x - r, y - r * .7, r * 2, r * 1.4, 4);
+      ctx.stroke();
+    }
+    ctx.fillStyle = '#0B5D4F'; ctx.fillRect(52, 104, RPW - 104, 80);
+    ctx.restore();
+    ctx.fillStyle = '#E76F51'; ctx.beginPath(); ctx.arc(X(102), 144, 26, 0, 7); ctx.fill();
+    ctx.fillStyle = '#FFFFFF'; ctx.font = '700 26px \"IBM Plex Sans", sans-serif'; ctx.textAlign = 'center'; ctx.direction = 'ltr'; ctx.fillText('T', X(102), 153);
+    ctx.direction = dir; ctx.textAlign = A; ctx.fillStyle = '#FFFFFF'; ctx.font = fontFor(600, 24); ctx.fillText(L.name, X(142), 140);
+    ctx.fillStyle = '#BFE6DA'; ctx.font = fontFor(400, 17); ctx.fillText(L.status, X(142), 165);
+    ctx.font = rtl ? fontFor(600, 15) : mono(500, 14); const sw2 = ctx.measureText(L.speed).width + 28;
+    const sx = rtl ? 74 : RPW - 74 - sw2; ctx.strokeStyle = 'rgba(255,255,255,.55)'; ctx.lineWidth = 2; rr(ctx, sx, 128, sw2, 32, 16); ctx.stroke();
+    ctx.fillStyle = '#FFFFFF'; ctx.textAlign = 'center'; ctx.fillText(L.speed, sx + sw2 / 2, 149);
+    ctx.font = fontFor(500, 15); const dw = ctx.measureText(L.today).width + 28;
+    ctx.fillStyle = 'rgba(255,255,255,.9)'; rr(ctx, RPW / 2 - dw / 2, 198, dw, 28, 10); ctx.fill();
+    ctx.fillStyle = GREY; ctx.fillText(L.today, RPW / 2, 218);
+    const bubble = (x, y, w, h, col) => { ctx.fillStyle = col; ctx.shadowColor = 'rgba(0,0,0,.12)'; ctx.shadowOffsetY = 2; ctx.shadowBlur = 3; rr(ctx, x, y, w, h, 16); ctx.fill(); ctx.shadowColor = 'transparent'; };
+    // place 1: the incoming "40 pcs", answered by the bot once it lands
+    ctx.font = fontFor(400, 25);
+    const inW = Math.min(560, ctx.measureText(L.inq).width + 48);
+    st.slots[0] = { x: X(80, inW), y: 242, w: inW, h: 56 };
+    if (st.filled[0]) {
+      bubble(st.slots[0].x, 242, inW, 56, '#FFFFFF');
+      ctx.fillStyle = INK; ctx.textAlign = A; ctx.direction = dir; ctx.fillText(L.inq, X(104), 279);
+      ctx.font = fontFor(400, 23); const outL = wrap(ctx, L.out, 500), ow = Math.max(...outL.map(l => ctx.measureText(l).width)) + 48;
+      const ox = rtl ? 80 : RPW - 80 - ow, oh = 40 + outL.length * 32;
+      bubble(ox, 312, ow, oh, '#D9FDD3');
+      ctx.fillStyle = INK; outL.forEach((l, k) => ctx.fillText(l, rtl ? ox + ow - 24 : ox + 24, 344 + k * 32));
+      ctx.direction = 'ltr'; ctx.font = mono(400, 14); ctx.textAlign = 'right';
+      const tx2 = rtl ? ox + 80 : ox + ow - 14; ctx.fillStyle = '#53BDEB'; ctx.fillText('✓✓', tx2, 312 + oh - 10);
+      ctx.fillStyle = GREY; ctx.fillText('09:02', tx2 - 26, 312 + oh - 10);
+    } else dashed(ctx, st.slots[0].x, 242, inW, 56, 16, '#B8AD9A');
+    // place 2: a voice note, transcribed into a task
+    const vw = 500, vx = X(80, vw), vy = 452, vh = 112;
+    st.slots[1] = { x: vx, y: vy, w: vw, h: vh };
+    if (st.filled[1]) {
+      bubble(vx, vy, vw, vh, '#FFFFFF');
+      const pcx = rtl ? vx + vw - 46 : vx + 46; ctx.fillStyle = TEAL; ctx.beginPath(); ctx.arc(pcx, vy + 40, 22, 0, 7); ctx.fill();
+      ctx.fillStyle = '#FFFFFF'; ctx.beginPath(); ctx.moveTo(pcx - 6, vy + 29); ctx.lineTo(pcx - 6, vy + 51); ctx.lineTo(pcx + 10, vy + 40); ctx.closePath(); ctx.fill();
+      [.3, .6, .9, .5, .8, .4, 1, .6, .35, .7, .5, .9, .45, .6, .3, .75, .5, .4].forEach((h, k) => {
+        ctx.fillStyle = k < 7 ? TEAL : '#B8C4CA';
+        const bx = rtl ? vx + vw - 90 - k * 17 - 5 : vx + 90 + k * 17; ctx.fillRect(bx, vy + 40 - h * 15, 5, h * 30);
+      });
+      ctx.fillStyle = GREY; ctx.font = mono(400, 15); ctx.direction = 'ltr'; ctx.textAlign = rtl ? 'left' : 'right'; ctx.fillText(L.voice, rtl ? vx + 18 : vx + vw - 18, vy + 46);
+      ctx.fillStyle = '#FFF1D2'; rr(ctx, vx + 12, vy + 70, vw - 24, 32, 10); ctx.fill();
+      ctx.fillStyle = '#7A5212'; ctx.font = fontFor(500, 17); ctx.direction = dir; ctx.textAlign = A; ctx.fillText(L.voiceT, rtl ? vx + vw - 26 : vx + 26, vy + 92);
+    } else dashed(ctx, vx, vy, vw, vh, 16, '#B8AD9A');
+    // the input bar
+    ctx.fillStyle = '#FFFFFF'; rr(ctx, X(72, RPW - 144 - 62), 594, RPW - 144 - 62, 48, 24); ctx.fill();
+    ctx.fillStyle = '#8A969C'; ctx.font = fontFor(400, 19); ctx.direction = dir; ctx.textAlign = A; ctx.fillText(L.msg, X(98), 625);
+    const mx = rtl ? 72 + 24 : RPW - 72 - 24; ctx.fillStyle = TEAL; ctx.beginPath(); ctx.arc(mx, 618, 24, 0, 7); ctx.fill();
+    ctx.fillStyle = '#FFFFFF'; rr(ctx, mx - 5, 605, 10, 17, 5); ctx.fill();
+    ctx.strokeStyle = '#FFFFFF'; ctx.lineWidth = 2.5; ctx.beginPath(); ctx.arc(mx, 616, 9, .15 * Math.PI, .85 * Math.PI); ctx.stroke();
+    ctx.beginPath(); ctx.moveTo(mx, 625); ctx.lineTo(mx, 631); ctx.stroke();
+    ctx.direction = 'ltr';
+  }
+  function paintSys(ctx, st) {
+    const L = T[lang].sys, rtl = panelBase(ctx, L.cap), X = (x, w = 0) => rtl ? RPW - x - w : x;
+    const A = rtl ? 'right' : 'left', E = rtl ? 'left' : 'right', dir = rtl ? 'rtl' : 'ltr', INK = '#1C1914', MUTE = '#9A9384';
+    ctx.fillStyle = '#F6F3EC'; rr(ctx, 52, 104, RPW - 104, RPH - 150, 22); ctx.fill();
+    ctx.direction = dir; ctx.textAlign = A; ctx.fillStyle = INK; ctx.font = fontFor(800, 27); ctx.fillText(L.title, X(80), 148);
+    ctx.fillStyle = MUTE; ctx.font = mono(400, 16); ctx.direction = 'ltr'; ctx.textAlign = E; ctx.fillText(L.date, rtl ? 80 : RPW - 80, 146);
+    // three numbers that matter
+    const tw = (RPW - 160 - 24) / 3;
+    [[L.k1[0], st.filled[0] ? L.k1f : L.k1[1], L.k1[2]], [L.k2[0], st.filled[0] ? '38' : L.k2[1]], [L.k3[0], L.k3[1]]].forEach(([label, val, delta], k) => {
+      const x = X(80 + k * (tw + 12), tw);
+      ctx.fillStyle = '#FFFFFF'; rr(ctx, x, 166, tw, 92, 14); ctx.fill(); ctx.strokeStyle = '#E7E1D4'; ctx.lineWidth = 2; ctx.stroke();
+      const tx = rtl ? x + tw - 18 : x + 18;
+      ctx.direction = dir; ctx.textAlign = A; ctx.fillStyle = MUTE; ctx.font = rtl ? fontFor(500, 15) : mono(500, 14); ctx.fillText(rtl ? label : label.toUpperCase(), tx, 193);
+      ctx.fillStyle = INK; ctx.font = '700 32px \"IBM Plex Sans", sans-serif'; ctx.direction = 'ltr'; ctx.fillText(val, tx, 240);
+      if (delta) {
+        const w2 = ctx.measureText(val).width; ctx.font = mono(500, 14); const dw = ctx.measureText(delta).width + 16;
+        const dx = rtl ? tx - w2 - 12 - dw : tx + w2 + 12;
+        ctx.fillStyle = '#DDF3E6'; rr(ctx, dx, 219, dw, 26, 13); ctx.fill();
+        ctx.fillStyle = '#1F7A4D'; ctx.textAlign = 'center'; ctx.fillText(delta, dx + dw / 2, 237);
+      }
+    });
+    // orders, with coloured statuses
+    ctx.fillStyle = MUTE; ctx.font = rtl ? fontFor(500, 14) : mono(500, 13); ctx.direction = dir; ctx.textAlign = A;
+    ctx.fillText(L.cols[0], X(98), 288); ctx.fillText(L.cols[1], X(212), 288);
+    ctx.textAlign = E; ctx.fillText(L.cols[2], rtl ? 98 : RPW - 98, 288);
+    const ST = { work: ['#FCEFD6', '#9A5B12'], wait: [null, '#8A8374'], paid: ['#DDF3E6', '#1F7A4D'], fresh: ['#E1ECFB', '#2F5FB3'] };
+    const pill = (text, y, kind) => {
+      const [bg, fg] = ST[kind]; ctx.font = fontFor(600, 16); const pw = ctx.measureText(text).width + 28;
+      const px2 = rtl ? 96 : RPW - 96 - pw; rr(ctx, px2, y + 11, pw, 30, 15);
+      if (bg) { ctx.fillStyle = bg; ctx.fill(); } else { ctx.strokeStyle = '#C9C1B0'; ctx.lineWidth = 2; ctx.stroke(); }
+      ctx.fillStyle = fg; ctx.textAlign = 'center'; ctx.direction = dir; ctx.fillText(text, px2 + pw / 2, y + 32);
+    };
+    const row = (y, id, what, hl) => {
+      ctx.fillStyle = hl ? '#FFF8EA' : '#FFFFFF'; rr(ctx, 80, y, RPW - 160, 52, 12); ctx.fill();
+      ctx.strokeStyle = hl ? '#F0D9A8' : '#E7E1D4'; ctx.lineWidth = 2; ctx.stroke();
+      ctx.direction = 'ltr'; ctx.textAlign = A; ctx.fillStyle = MUTE; ctx.font = mono(500, 16); ctx.fillText(id, X(98), y + 33);
+      ctx.direction = dir; ctx.fillStyle = INK; ctx.font = fontFor(600, 19); ctx.fillText(what, X(212), y + 33);
+    };
+    row(300, L.r0[0], L.r0[1]); pill(L.r0[2], 300, 'work');
+    row(360, L.r1[0], L.r1[1], st.filled[1]); pill(st.filled[1] ? L.r1[3] : L.r1[2], 360, st.filled[1] ? 'paid' : 'wait');
+    st.slots[1] = { x: rtl ? 88 : RPW - 88 - 230, y: 360, w: 230, h: 52 };
+    st.slots[0] = { x: 80, y: 420, w: RPW - 160, h: 52 };
+    if (st.filled[0]) {
+      row(420, L.r2[0], L.r2[1], true); pill(L.r2[2], 420, 'fresh');
+      ctx.fillStyle = '#009DE0'; ctx.beginPath(); ctx.arc(X(200), 446, 5, 0, 7); ctx.fill();
+    } else dashed(ctx, 80, 420, RPW - 160, 52, 12, '#C9C1B0');
+    // the week, with its numbers; the last bar is today and matches the revenue tile
+    ctx.fillStyle = MUTE; ctx.font = rtl ? fontFor(500, 14) : mono(500, 13); ctx.direction = dir; ctx.textAlign = A;
+    ctx.fillText(rtl ? L.chartT : L.chartT.toUpperCase(), X(80), 506);
+    const vals = [2.1, 3.4, 2.9, 3.8, 3.5, 4.3, st.filled[0] ? 5.0 : 4.8], base = 628, top = 88, bx = 80, bw = RPW - 160;
+    ctx.strokeStyle = '#E2DBCC'; ctx.lineWidth = 2; ctx.beginPath(); ctx.moveTo(bx, base + 1); ctx.lineTo(bx + bw, base + 1); ctx.stroke();
+    vals.forEach((v, k) => {
+      const slot = bw / 7, w = slot - 30, x = rtl ? bx + bw - (k + 1) * slot + 15 : bx + k * slot + 15, h = v / 5.2 * top;
+      const today = k === 6;
+      ctx.fillStyle = today ? '#2A9D8F' : '#BFDCD5'; rr(ctx, x, base - h, w, h, 6); ctx.fill();
+      ctx.direction = 'ltr'; ctx.textAlign = 'center';
+      ctx.fillStyle = today ? INK : MUTE; ctx.font = today ? mono(500, 14) : mono(400, 13);
+      ctx.fillText(v.toFixed(1).replace('.', L.dec) + L.kilo, x + w / 2, base - h - 8);
+      ctx.fillStyle = today ? INK : MUTE; ctx.font = fontFor(today ? 600 : 400, 14); ctx.direction = dir;
+      ctx.fillText(L.days[k], x + w / 2, base + 22);
+    });
+    ctx.direction = 'ltr';
+  }
+  const PAINTERS = [paintSite, paintBot, paintSys];
+  const results = PAINTERS.map((p, i) => {
+    const cv = mk(RPW, RPH);
+    const r = { cv, filled: [false, false], slots: [], hit: 0, flash: [0, 0] };
+    r.paint = () => p(cv.getContext('2d'), r);
+    r.paint();
+    r.t = tex(cv);
+    r.mesh = new Mesh(new PlaneGeometry(RW, RH), new MeshBasicMaterial({ map: r.t, transparent: true, depthWrite: false, toneMapped: false, opacity: 0 }));
+    world.add(r.mesh);
+    const glowSprite = () => new Sprite(new SpriteMaterial({ map: glow.material.map, blending: AdditiveBlending, depthWrite: false, transparent: true, opacity: 0 }));
+    r.halo = glowSprite(); world.add(r.halo);
+    r.glows = [glowSprite(), glowSprite()]; r.glows.forEach(g => world.add(g));
+    return r;
+  });
+  // a place on a screen, in scene coordinates
+  function slotAt(r, k, out) {
+    const sl = r.slots[k];
+    return out.set(((sl.x + sl.w / 2) / RPW - .5) * RW, (.5 - (sl.y + sl.h / 2) / RPH) * RH, .05).applyMatrix4(r.mesh.matrix);
+  }
+  const slotW = (r, k) => r.slots[k].w / RPW * RW * r.mesh.scale.x;
+
+  const lampCv = mk(256, 256), lctx = lampCv.getContext('2d'), lg = lctx.createRadialGradient(128, 128, 0, 128, 128, 128);
+  lg.addColorStop(0, 'rgba(236,234,228,1)'); lg.addColorStop(.3, 'rgba(210,208,200,.4)'); lg.addColorStop(1, 'rgba(210,208,200,0)');
+  lctx.fillStyle = lg; lctx.fillRect(0, 0, 256, 256);
+  const lamp = new Sprite(new SpriteMaterial({ map: tex(lampCv), blending: AdditiveBlending, depthWrite: false, transparent: true, opacity: 0 }));
+  lamp.scale.set(7.5, 4.8, 1); world.add(lamp);
+
+  /* ═════ sparks ═════ */
+  const NS = 900, spPos = new Float32Array(NS * 3), spCol = new Float32Array(NS * 3), spA = new Float32Array(NS), spSize = new Float32Array(NS);
+  const spVel = new Float32Array(NS * 3), spLife = new Float32Array(NS), spMax = new Float32Array(NS);
+  let spNext = 0;
+  const spGeo = new BufferGeometry();
+  spGeo.setAttribute('position', new BufferAttribute(spPos, 3));
+  spGeo.setAttribute('aColor', new BufferAttribute(spCol, 3));
+  spGeo.setAttribute('aAlpha', new BufferAttribute(spA, 1));
+  spGeo.setAttribute('aSize', new BufferAttribute(spSize, 1));
+  const spMat = new ShaderMaterial({
+    transparent: true, depthWrite: false, blending: AdditiveBlending,
+    uniforms: { uPR: { value: 1 } },
+    vertexShader: `
+      uniform float uPR; attribute vec3 aColor; attribute float aAlpha, aSize; varying vec3 vC; varying float vA;
+      void main(){ vec4 mv = modelViewMatrix * vec4(position, 1.0); gl_Position = projectionMatrix * mv;
+        gl_PointSize = aSize * uPR * (7.0 / -mv.z); vC = aColor; vA = aAlpha; }`,
+    fragmentShader: `
+      varying vec3 vC; varying float vA;
+      void main(){ float d = length(gl_PointCoord - 0.5); float a = smoothstep(0.5, 0.0, d) * vA; gl_FragColor = vec4(vC * a, a); }`
+  });
+  const sparks = new Points(spGeo, spMat); sparks.frustumCulled = false; world.add(sparks);
+  const AMBER = new Color(0xA39BD6), WHITE = new Color(0xF0EEFA);   // AMBER keeps its name: it is the system's colour, lilac
+  function spawn(at, color, n, speed, size, life, towardYou = .4) {
+    if (reduced) return;
+    for (let k = 0; k < n; k++) {
+      const i = spNext; spNext = (spNext + 1) % NS;
+      const th = Math.random() * Math.PI * 2, ph = Math.acos(2 * Math.random() - 1), v = speed * (.35 + Math.random() * .65);
+      spPos[i * 3] = at.x; spPos[i * 3 + 1] = at.y; spPos[i * 3 + 2] = at.z;
+      spVel[i * 3] = Math.sin(ph) * Math.cos(th) * v; spVel[i * 3 + 1] = Math.sin(ph) * Math.sin(th) * v; spVel[i * 3 + 2] = Math.abs(Math.cos(ph)) * v * towardYou;
+      const c = Math.random() < .25 ? WHITE : color;
+      spCol[i * 3] = c.r; spCol[i * 3 + 1] = c.g; spCol[i * 3 + 2] = c.b;
+      spSize[i] = size * (.5 + Math.random()); spMax[i] = spLife[i] = life * (.6 + Math.random() * .6);
+    }
+  }
+  function stepSparks(dt) {
+    const drag = Math.exp(-2.2 * dt);
+    for (let i = 0; i < NS; i++) {
+      if (spLife[i] <= 0) { spA[i] = 0; continue; }
+      spLife[i] -= dt;
+      spVel[i * 3] *= drag; spVel[i * 3 + 1] = spVel[i * 3 + 1] * drag - .9 * dt; spVel[i * 3 + 2] *= drag;
+      spPos[i * 3] += spVel[i * 3] * dt; spPos[i * 3 + 1] += spVel[i * 3 + 1] * dt; spPos[i * 3 + 2] += spVel[i * 3 + 2] * dt;
+      spA[i] = Math.pow(Math.max(0, spLife[i] / spMax[i]), 1.3);
+    }
+    spGeo.attributes.position.needsUpdate = true; spGeo.attributes.aAlpha.needsUpdate = true;
+    spGeo.attributes.aColor.needsUpdate = true; spGeo.attributes.aSize.needsUpdate = true;
+  }
+
+  /* ═════ dust in the lamp light ═════ */
+  const ND = mobile ? 140 : 240, dpos = new Float32Array(ND * 3), dr = rand(99);
+  for (let i = 0; i < ND; i++) { dpos[i * 3] = (dr() - .5) * 12; dpos[i * 3 + 1] = (dr() - .5) * 9; dpos[i * 3 + 2] = (dr() - .5) * 6 - 1; }
+  const dg = new BufferGeometry(); dg.setAttribute('position', new BufferAttribute(dpos, 3));
+  const dustTexCv = mk(64, 64), dtx = dustTexCv.getContext('2d'); const dgr = dtx.createRadialGradient(32, 32, 0, 32, 32, 32);
+  dgr.addColorStop(0, 'rgba(255,230,180,1)'); dgr.addColorStop(1, 'rgba(255,230,180,0)'); dtx.fillStyle = dgr; dtx.fillRect(0, 0, 64, 64);
+  const dust = new Points(dg, new PointsMaterial({ size: .045, map: tex(dustTexCv), transparent: true, opacity: .45, depthWrite: false, blending: AdditiveBlending, color: 0xC9C6DC }));
+  scene.add(dust);
+
+  /* ═════ layout ═════ */
+  let W = 0, H = 0, narrow = true, visH = 1, visW = 1;
+  function layout() {
+    W = innerWidth; H = innerHeight;
+    renderer.setPixelRatio(Math.min(devicePixelRatio || 1, mobile ? 1.75 : 2));
+    renderer.setSize(W, H, false);
+    camera.aspect = W / H;
+    const t = Math.tan(MathUtils.degToRad(camera.fov / 2));
+    narrow = W < 860;
+    let d;
+    if (narrow) d = Math.max(4.5 / (2 * t * camera.aspect), 4.0 / (2 * t) / 0.62);
+    else d = Math.max(4.9 / (2 * t), 5.6 / (2 * t * camera.aspect * 0.56));
+    camera.position.set(0, 0, d); camera.lookAt(0, 0, 0); camera.updateProjectionMatrix();
+    visH = 2 * d * t; visW = visH * camera.aspect;
+    coreMat.uniforms.uPR.value = renderer.getPixelRatio() * H / 900;
+    spMat.uniforms.uPR.value = coreMat.uniforms.uPR.value;
+  }
+  layout();
+  addEventListener('resize', layout);
+
+  /* ═════ input: tilt, drag-to-spin, tap-to-flip ═════ */
+  const tilt = { x: 0, y: 0, tx: 0, ty: 0 };
+  let spin = 0, spinV = 0, dragging = false, down = null, gyro = false;
+  const ray = new Raycaster(), ndc = new Vector2();
+  function hitCard(cx, cy) {
+    if (card.scale.x < .3) return false;
+    ndc.set(cx / W * 2 - 1, -(cy / H) * 2 + 1); ray.setFromCamera(ndc, camera);
+    return ray.intersectObjects(card.children, false).length > 0;
+  }
+  function hitChip(cx, cy) {
+    if (ph.burst < .95 || ph.land > 0 || ph.order > .3 || sheetChip >= 0 || chips.some(c => c.mode !== 'idle')) return null;
+    ndc.set(cx / W * 2 - 1, -(cy / H) * 2 + 1); ray.setFromCamera(ndc, camera);
+    const hit = ray.intersectObjects(chips.filter(c => c.mesh.visible).map(c => c.mesh), false)[0];
+    return hit ? chips.find(c => c.mesh === hit.object) : null;
+  }
+  let hoverChip = null;
+  const mouse = new Vector2(), hv = new Vector3();
+  addEventListener('pointermove', e => {
+    if (!gyro && e.pointerType === 'mouse') {
+      tilt.tx = (e.clientY / H - .5) * .5; tilt.ty = (e.clientX / W - .5) * .7;
+      mouse.set(e.clientX / W * 2 - 1, -(e.clientY / H) * 2 + 1);
+      const h = hitChip(e.clientX, e.clientY);
+      if (h) hoverChip = h;
+      else if (hoverChip) {
+        // keep the catch while the cursor stays near it, so it can't slip away
+        hv.copy(hoverChip.mesh.position); world.localToWorld(hv); hv.project(camera);
+        const dx = (hv.x + 1) / 2 * W - e.clientX, dy = (1 - hv.y) / 2 * H - e.clientY;
+        if (dx * dx + dy * dy > 130 * 130 || ph.order > .3 || ph.land > 0) hoverChip = null;
+      }
+      canvas.style.cursor = hoverChip ? 'pointer' : 'grab';
+    }
+    if (down && e.pointerId === down.id) {
+      const dx = e.clientX - down.x;
+      if (Math.abs(dx) > 6 || dragging) { dragging = true; spin = down.spin + dx * .011; spinV = (e.clientX - down.lx) * .011; down.lx = e.clientX; }
+    }
+  }, { passive: true });
+  document.documentElement.addEventListener('mouseleave', () => { hoverChip = null; });
+  canvas.addEventListener('pointerdown', e => {
+    const free = sheetChip < 0 && chips.every(c => c.mode === 'idle') && ph.land === 0 && ph.order <= .3;
+    const chip = hitChip(e.clientX, e.clientY) || (e.pointerType === 'mouse' && free ? hoverChip : null);
+    if (chip) { chip.mode = 'opening'; chip.t0 = performance.now(); chip.nudgeAt = -1; return; }
+    if (!hitCard(e.clientX, e.clientY)) return;
+    down = { id: e.pointerId, x: e.clientX, y: e.clientY, lx: e.clientX, spin, t: performance.now() };
+    dragging = false; spinV = 0;
+    if (window.DeviceOrientationEvent && typeof DeviceOrientationEvent.requestPermission === 'function' && !gyro) {
+      DeviceOrientationEvent.requestPermission().catch(() => {});
+    }
+  });
+  const isBack = () => Math.abs(Math.round(spin / Math.PI)) % 2 === 1;
+  const release = e => {
+    if (!down || e.pointerId !== down.id) return;
+    const quick = performance.now() - down.t < 350 && !dragging;
+    if (quick) {
+      spinV = 0;
+      // finale: first tap shows the back (QR), second tap throws the chats out again and rewinds
+      if (sCur > 3.6 && isBack() && rwAt < 0) startRewind();
+      else {
+        // the tapped edge is pushed away: right of centre turns one way, left — the other
+        card.getWorldPosition(hv); hv.project(camera);
+        const dir = e.clientX < (hv.x + 1) / 2 * W ? -1 : 1;
+        spinTarget = (Math.round(spin / Math.PI) + dir) * Math.PI;
+      }
+    }
+    down = null; dragging = false;
+  };
+  addEventListener('pointerup', release); addEventListener('pointercancel', release);
+  let spinTarget = null, rwAt = -1, rwJumped = false, rwTexted = false;
+  function startRewind() {
+    rwAt = performance.now(); rwJumped = false; rwTexted = false;
+    if (reduced) { window.scrollTo({ top: 0, behavior: 'instant' }); resetStory(); rwAt = -1; document.dispatchEvent(new Event('card:rewound')); }
+  }
+  function resetStory() {
+    sCur = 0; spinV = 0;
+    ph.ring = ph.burst = ph.order = ph.land = 0; orderOn = landOn = false; burstOn = false; demoDone = false; burstSparked = false;
+    chips.forEach(c => { c.absorbed = false; c.mode = 'idle'; c.nudgeAt = -1; c.shattered = false; });
+  }
+  let gyro0 = null;
+  addEventListener('deviceorientation', e => {
+    if (e.beta == null) return;
+    if (!gyro0) gyro0 = { b: e.beta, g: e.gamma };
+    gyro = true;
+    tilt.tx = MathUtils.clamp((e.beta - gyro0.b) / 40, -1, 1) * .45;
+    tilt.ty = MathUtils.clamp((e.gamma - gyro0.g) / 40, -1, 1) * .6;
+  });
+  canvas.style.cursor = 'grab';
+
+  /* ═════ frame ═════ */
+  let sCur = 0, last = performance.now(), time = 0, running = true, pulse = 0;
+  const prog = $('#prog');
+  document.addEventListener('visibilitychange', () => { running = !document.hidden; if (running) { last = performance.now(); requestAnimationFrame(frame); } });
+  const tmp = new Vector3(), lane = new Vector3(), dest = new Vector3(), ctrl = new Vector3(), tmp2 = new Vector3();
+  const ph = { ring: 0, burst: 0, order: 0, land: 0 };
+  let landPace = 1;
+  let burstOn = false, orderOn = false, landOn = false, buzzPh = 0, lastUnread = -1;
+  let demoDone = false, demoAt = -1, burstSparked = false;
+  const at = new Vector3(), openPos = new Vector3(), tmp3 = new Vector3();
+  const barEl = $('.bar'), kick4 = $('.beat[data-beat="4"] .kicker'), kick0 = $('.beat[data-beat="0"] .kicker');
+  const OPEN_D = 4.2;
+  const hexOf = app => Array.isArray(APPS[app].bg) ? APPS[app].bg[1] : APPS[app].bg;
+  function iconFor(c, i) {
+    if (!c.icon) { const cv = mk(96, 96); appIcon(cv.getContext('2d'), POOL[i][0], 0, 0, 96); c.icon = cv.toDataURL(); }
+    return c.icon;
+  }
+  onSheetClose = i => { const c = chips[i]; c.mode = 'closing'; c.t0 = performance.now(); c.shattered = false; };
+  const unreadEl = $('#unread-n'), big = new Vector3();
+  const mix = (a, b, t) => a + (b - a) * t, sstep = (a, b, x) => { const t = clamp01((x - a) / (b - a)); return t * t * (3 - 2 * t); };
+  // read-only handle for card/_qa checks
+  window.__card = {
+    ph, get clock() { return time; }, get s() { return sCur; }, get spin() { return spinTarget ?? spin; },
+    chipAt(i) { tmp3.copy(chips[i].mesh.position); world.localToWorld(tmp3); tmp3.project(camera); return [(tmp3.x + 1) / 2 * W, (1 - tmp3.y) / 2 * H, chips[i].mesh.visible]; },
+    chipMode: i => chips[i].mode,
+    filled: () => results.map(r => r.filled.slice()),
+    resultsVisible: () => results.map(r => r.mesh.visible),
+    cardRect() {
+      // the card's box on screen, from its four corners
+      const xs = [], ys = [];
+      [[-CW / 2, -CH / 2], [CW / 2, -CH / 2], [CW / 2, CH / 2], [-CW / 2, CH / 2]].forEach(([x, y]) => {
+        tmp3.set(x, y, 0); card.localToWorld(tmp3); tmp3.project(camera); xs.push((tmp3.x + 1) / 2 * W); ys.push((1 - tmp3.y) / 2 * H);
+      });
+      return { top: Math.min(...ys), bottom: Math.max(...ys), left: Math.min(...xs), right: Math.max(...xs), visible: card.visible };
+    },
+    panel: i => results[i].cv.toDataURL('image/png'),
+    probe: () => ({ card: [card.position.z, card.scale.x, card.visible], chips: chips.map(c => [c.mesh.position.x, c.mesh.position.y, c.mesh.position.z, c.mesh.visible, c.mesh.scale.x]) })
+  };
+  const eback = t => { const c1 = 1.9, c3 = c1 + 1; return 1 + c3 * Math.pow(t - 1, 3) + c1 * Math.pow(t - 1, 2); };
+  const bump = t => Math.sin(Math.PI * clamp01(t));
+  // 0 → overshoot ≈1.25 at t≈.4 → dips just under → exactly 1 at t=1 with zero speed, so the float takes over without a jolt
+  const spring = t => t <= 0 ? 0 : t >= 1 ? 1 : 1 - Math.cos(2.5 * Math.PI * t) * Math.exp(-2.2 * t) * (1 - t);
+
+  function frame(now) {
+    if (!running) return;
+    // rAF stamps can predate `last` → clamp at 0 (DEFECTS §19)
+    const dt = Math.min(.05, Math.max(0, (now - last) / 1000)); last = now; time += reduced ? 0 : dt;
+    // rewind: 0–.3 chats fly out, .3–.55 a vortex pulls them back into the card, then the card spins home
+    const rw = rwAt < 0 ? -1 : Math.max(0, (now - rwAt) / 2600);
+    if (rw >= .5 && !rwJumped) {
+      rwJumped = true;
+      window.scrollTo({ top: 0, behavior: 'instant' });
+      resetStory();
+      spinTarget = Math.round(spin / Math.PI) * Math.PI + 3 * Math.PI;   // back → front, a turn and a half
+    }
+    if (rw >= .7 && !rwTexted) { rwTexted = true; document.documentElement.classList.remove('rewinding'); document.dispatchEvent(new Event('card:rewound')); }
+    if (rw >= 1) rwAt = -1;
+    if (rw >= 0 && rw < .5) document.documentElement.classList.add('rewinding');
+    const sT = storyPos();
+    sCur += (sT - sCur) * (reduced ? 1 : Math.min(1, dt * 5));
+    const s = sCur;
+    prog.style.width = (s / 4 * 100).toFixed(2) + '%';
+
+    // where the stage sits: above the text on a phone, beside it on a desk
+    const rtl = lang === 'he';
+    const home = rw >= .5 ? eio(seg(rw, .5, .95)) : 1;   // after the jump, glide from the finale pose to the hero pose
+    if (narrow) world.position.set(0, visH * (.14 + .07 * (rw >= .5 ? 1 - home : seg(s, 3.2, 3.9))), 0);
+    else world.position.set((rtl ? -1 : 1) * visW * .2, 0, 0);
+    // past the start of the finale the card scrolls up with the page, as if it were part of it
+    const tail = tops.length > 4 ? Math.max(0, window.scrollY - tops[4]) : 0;
+    world.position.y += tail * visH / H;
+
+    // ── card
+    tilt.x += (tilt.tx - tilt.x) * Math.min(1, dt * 4); tilt.y += (tilt.ty - tilt.y) * Math.min(1, dt * 4);
+    if (!dragging) {
+      if (Math.abs(spinV) > .002) { spin += spinV; spinV *= .94; spinTarget = null; }
+      else {
+        if (spinTarget == null) spinTarget = Math.round(spin / Math.PI) * Math.PI;
+        spin += (spinTarget - spin) * Math.min(1, dt * (rw >= 0 ? 2.6 : 6));
+      }
+    }
+    // the ring follows your finger: scroll harder, it shakes harder; reach the edge and it bursts
+    // on a phone the ring starts with the first swipe: the smooth start read as «stands still for 1.5 s» (Томер, 26.09)
+    ph.ring = narrow ? Math.pow(seg(s, .01, .74), .85) : sstep(.04, .74, s);
+    burstOn = s > .74 ? true : s < .66 ? false : burstOn;
+    orderOn = s > 1.55 ? true : s < 1.4 ? false : orderOn;
+    // the screens arrive together with their own text, not under the orbits' one (DEFECTS §25)
+    landOn = s > 2.6 ? true : s < 2.45 ? false : landOn;
+    const adv = (v, on, dur, back = dur) => reduced ? (on ? 1 : 0) : clamp01(v + (on ? dt / dur : -dt / back));
+    ph.burst = adv(ph.burst, burstOn, 1.8, .9);
+    ph.order = adv(ph.order, orderOn, 1.1);
+    // leaving the step early? the landing hurries up instead of spilling into the finale
+    // leaving the step early speeds the landing up — gradually: a hard switch to 4.6× made the notifications
+    // jump from 3 000 to 13 000 px/s in one frame (DEFECTS §30); outFade still clears the stage by the finale
+    landPace += ((s > 2.8 ? 1 + .9 * sstep(2.8, 3.1, s) : 1) - landPace) * Math.min(1, dt * 2.2);
+    ph.land = adv(ph.land, landOn, 4.2 / landPace, 1.2);
+
+    // the unread counter under the headline climbs with the ring
+    const unread = 3 + Math.round(25 * Math.pow(ph.ring, 1.3));
+    if (unread !== lastUnread && unreadEl) { lastUnread = unread; unreadEl.textContent = unread; }
+
+    // card rings like a phone on silent: short soft pulses first, then harder, faster, non-stop — then it bursts
+    const rwOut = rw >= 0 && rw < .5;
+    const intensity = reduced ? 0 : rwOut ? 1 - seg(rw, .02, .1) : (ph.ring > 0 ? (narrow ? .22 + .78 * Math.pow(ph.ring, 1.4) : .08 + .92 * Math.pow(ph.ring, 1.8)) : 0) * (1 - ph.burst);
+    buzzPh += dt * (12 + 88 * Math.pow(rwOut ? 1 : ph.ring, 1.5));
+    const pattern = rwOut ? 1 : mix(.2 + .8 * sstep(-.2, .35, Math.sin(time * 6.2)), 1, sstep(.5, .9, ph.ring));
+    const buzz = intensity * pattern; window.__card.buzz = buzz;
+    const recoil = bump(seg(ph.burst, 0, .45)) + (rwOut ? bump(seg(rw, .02, .2)) + bump(seg(rw, .4, .56)) * .8 : 0);
+    const shrink = eio(seg(s, 0.75, 1.1)), vanish = eio(seg(s, 1.2, 1.55)), ret = eio(seg(s, 3.42, 3.95));
+    let cs = (1 - shrink * .32 + recoil * .08) * (1 - vanish);
+    cs = cs + ret * (narrow ? .8 : 1);
+    if (rw >= .5) cs *= mix(narrow ? .8 : 1, 1, home);
+    const idle = reduced ? 0 : Math.sin(time * .7) * .05;
+    card.visible = cs > .01;
+    card.scale.setScalar(Math.max(.001, cs));
+    card.position.set(Math.sin(buzzPh) * .045 * buzz, idle * .6 + Math.sin(buzzPh * 1.31) * .022 * buzz, -recoil * .6);
+    card.rotation.x = tilt.x + idle * .6 - .08 - recoil * .3;
+    card.rotation.y = spin + tilt.y + vanish * Math.PI * 4 + (reduced ? 0 : Math.sin(time * .45) * .12 * (1 - shrink) * (1 - ret));
+    card.rotation.z = shrink * (1 - ret) * -.1 + Math.sin(buzzPh * .87) * .055 * buzz;
+
+    // sparks the moment the card gives way
+    if (ph.burst > .02 && !burstSparked && burstOn) { burstSparked = true; spawn(at.set(0, 0, .2), AMBER, 160, 4.2, 1.1, 1.3, .8); }
+    if (ph.burst < .01) burstSparked = false;
+    if (rw >= .02 && rw < .05 && !startRewind.sparked) { startRewind.sparked = true; spawn(at.set(0, 0, .2), AMBER, 140, 4, 1.1, 1.2, .8); }
+    if (rw < 0) startRewind.sparked = false;
+
+    // ── burst flash + shock ring; a warm glow builds up behind the card while it rings
+    const fl = Math.max(bump(seg(ph.burst, 0, .5)) * (s < 1.3 ? 1 : 0), rwOut ? Math.max(bump(seg(rw, .02, .22)), bump(seg(rw, .42, .56)) * 1.2) : 0);
+    const ringGlow = rwOut ? 0 : ph.ring * (1 - ph.burst) * (.12 + .28 * pattern) * (s < 1.3 ? 1 : 0);
+    const shockK = rwOut ? seg(rw, .03, .3) : seg(ph.burst, .02, .75);
+    shock.scale.setScalar(.6 + eout(shockK) * 4.6);
+    shock.material.opacity = shockK > 0 && shockK < 1 ? (1 - shockK) * .6 : 0;
+    shock.visible = shock.material.opacity > .01;
+
+    // ── core: the engine the card turns into
+    const amp = eout(seg(s, 1.25, 1.95)) * (1 - eio(seg(s, 2.7, 3.2)));
+    coreMat.uniforms.uAmp.value = amp;
+    coreMat.uniforms.uTime.value = time;
+    pulse *= Math.pow(.02, dt); coreMat.uniforms.uPulse.value = pulse;
+    core.rotation.y += dt * (.12 + amp * .18); core.rotation.x = Math.sin(time * .3) * .15;
+    core.visible = amp > .005 || fl > .01 || ringGlow > .01;
+    glow.material.opacity = amp * (.55 + pulse * .6) + fl * .95 + ringGlow;
+    glow.scale.setScalar(2.6 + amp * 1.6 + pulse + fl * 3 + ringGlow * 2);
+    rings.forEach((r, k) => { r.material.opacity = amp * .3; r.rotation.z += dt * (.18 + k * .1) * (k % 2 ? -1 : 1); });
+    world.updateMatrixWorld(true);
+    // phone: the card lives in the band between the header and the step's text — on the first screen a long
+    // heading (RU/EN on 360 px) would climb onto it (QA 27.09); in the finale it rides up with the page and,
+    // meeting the header, shrinks inside the band instead of tucking under it (Tomer 26.09)
+    if (narrow && card.visible && rw < 0 && (s < .75 || tail > 0)) {
+      const lim = barEl.getBoundingClientRect().bottom + 10;
+      const lo = (s < .75 ? kick0 : kick4).getBoundingClientRect().top - 12;
+      let top = Infinity, bot = -Infinity;
+      [[-CW / 2, -CH / 2], [CW / 2, -CH / 2], [CW / 2, CH / 2], [-CW / 2, CH / 2]].forEach(([x, y]) => {
+        tmp3.set(x, y, 0); card.localToWorld(tmp3); tmp3.project(camera); const sy = (1 - tmp3.y) / 2 * H; top = Math.min(top, sy); bot = Math.max(bot, sy);
+      });
+      if (top < lim || bot > lo) {
+        const k = clamp01((lo - lim) / (bot - top));
+        card.scale.multiplyScalar(Math.max(.001, k)); card.visible = k > .08;
+        world.position.y -= ((lim + lo) / 2 - (top + bot) / 2) * visH / H;
+        world.updateMatrixWorld(true);
+      }
+    }
+
+    // ── hero light: warm lamp pool behind the resting card and a glint that crosses the metal every few seconds
+    const heroK = rw >= 0 ? 0 : Math.max(1 - seg(s, .5, 1.0), ret);
+    lamp.material.opacity = .26 * heroK * (1 - ph.burst * .6);
+    lamp.position.set(0, .45, -.9);
+    const sw = reduced ? .5 : (time % 6.5) / 6.5, pass = sstep(0, .42, sw);
+    sweep.position.set(mix(-7, 7, pass), 2.2, 4.2);
+    sweep.intensity = 2.6 * bump(sw / .42) * heroK;
+
+    // ── results: rise out of the swarm, facing you — bigger, they are the point
+    const targets = narrow
+      ? [[-1.08, .66, .15, .22, -.05], [1.08, .12, .35, -.22, .04], [-.5, -1.05, .6, .12, .02]]
+      : [[-1.5, .86, -.1, .28, -.04], [1.45, .56, .15, -.26, .04], [0, -1.0, .45, 0, 0]];
+    const outFade = 1 - eio(seg(s, 3.12, 3.36));
+    results.forEach((r, i) => {
+      const k = eback(clamp01((ph.land - i * .06) / .22));
+      const ko = clamp01(k);
+      const [tx, ty, tz, ry, rz] = targets[i];
+      r.mesh.position.set(tx * k, ty * k + (reduced ? 0 : Math.sin(time * .8 + i * 2) * .035 * ko), tz * k);
+      r.mesh.rotation.set(0, ry * k + (1 - ko) * 1.5, rz * k);
+      r.hit *= Math.pow(.004, dt);
+      const sc = (narrow ? 1.02 : 1.4) * (.15 + .85 * k) * (1 + r.hit * .07);
+      r.mesh.scale.setScalar(Math.max(.001, sc));
+      r.mesh.material.opacity = ko * outFade; r.mesh.visible = ko * outFade > .01;
+      r.mesh.updateMatrix();
+      r.halo.position.set(r.mesh.position.x, r.mesh.position.y, r.mesh.position.z - .06);
+      r.halo.scale.set(RW * 2.3 * sc, RH * 2.8 * sc, 1);
+      r.halo.material.opacity = (r.hit * .6 + ko * .07) * outFade;
+      r.halo.visible = r.halo.material.opacity > .01;
+      // places empty again when the story rewinds
+      if (ph.land < .02 && (r.filled[0] || r.filled[1])) { r.filled = [false, false]; r.paint(); r.t.needsUpdate = true; }
+      r.glows.forEach((g, k) => {
+        r.flash[k] *= Math.pow(.05, dt);
+        if (!r.slots[k]) return;
+        slotAt(r, k, g.position); g.position.z += .02;
+        const w = slotW(r, k); g.scale.set(w * 1.9, w * .9, 1);
+        g.material.opacity = r.flash[k] * .9 * outFade; g.visible = g.material.opacity > .01;
+      });
+    });
+
+    // one scrap shows, unasked, that they can be touched: it drifts up to you and twitches, then goes back
+    if (ph.burst >= 1 && !demoDone && ph.order === 0 && rw < 0) {
+      if (demoAt < 0) demoAt = now + 1200;
+      else if (now >= demoAt) {
+        demoDone = true; demoAt = -1;
+        const pick = chips.filter(c => c.mesh.visible && c.mode === 'idle').sort((a, b) => (Math.abs(a.mesh.position.x) + Math.abs(a.mesh.position.y - .6)) - (Math.abs(b.mesh.position.x) + Math.abs(b.mesh.position.y - .6)))[0];
+        if (pick) pick.nudgeAt = now;
+      }
+    }
+    if (ph.burst < .5) demoAt = -1;
+
+    // where an opened notification sits: screen centre, sized to the sheet that takes over from it
+    openPos.set(0, 0, camera.position.z - OPEN_D); world.worldToLocal(openPos);
+    const visAt = 2 * OPEN_D * Math.tan(MathUtils.degToRad(camera.fov / 2)) * camera.aspect;
+    const fullScale = (Math.min(W - 32, 440) / W) * visAt / CHW / (narrow ? .9 : 1);
+
+    // ── chips: burst out of the card → chaos → orbits → run-up around a big circle → dive into their result
+    const rx = narrow ? visW * .47 : visW * .24, ry = narrow ? visH * .27 : visH * .4, cy = narrow ? -visH * .05 : 0;
+    chips.forEach((c, i) => {
+      const L = c.lane;
+      // a real spring: shoot out, overshoot the spot, get pulled back, settle exactly on it (1.2 s each)
+      const e = clamp01((ph.burst - c.oBurst * .8) / .66), es = spring(e);
+      const ko = eio(clamp01((ph.order - c.oOrder) / .6));
+      // .42 → .56 for all; the six that take a place had only .3 and were the fastest things on screen (§30)
+      const kl = clamp01((ph.land - c.oLand) / (c.stick >= 0 ? .44 : .56));
+      // the dive eases into its place instead of hitting it at full speed (§30)
+      const ka = eio(seg(kl, 0, .55)), kb = eio(seg(kl, .45, 1));
+      if (kb > .97 && !c.absorbed) {
+        c.absorbed = true; results[L].hit = Math.min(1.4, results[L].hit + .7);
+        if (c.stick >= 0) {
+          // the scrap becomes part of the screen: its place fills, flashes and throws a few sparks
+          const r = results[L]; r.filled[c.stick] = true; r.paint(); r.t.needsUpdate = true; r.flash[c.stick] = 1;
+          spawn(slotAt(r, c.stick, at), c.col, 26, 1.8, 1, .8, .7);
+        } else spawn(results[L].mesh.position, AMBER, 12, 1.6, .9, .6, .6);
+      }
+      if (kb < .9) c.absorbed = false;
+      // chaos position
+      // each scrap keeps its own clock: under the mouse it almost stops
+      c.mag = (c.mag || 0) + ((hoverChip === c && c.mode === 'idle' ? 1 : 0) - (c.mag || 0)) * Math.min(1, dt * 7);
+      c.lt = (c.lt || 0) + dt * (1 - .92 * c.mag);
+      const a = c.ang + c.lt * c.w;
+      const R = c.rad * (narrow ? .9 : 1);
+      tmp.set(Math.cos(a) * R, c.y * (narrow ? 1.05 : 1) + Math.sin(time * .9 + c.ph) * .16, c.zL + Math.sin(time * .5 + c.ph) * .12);
+      // on a desk the text column is beside the scene: squeeze the swarm back before it drifts under the text
+      if (!narrow) { const side = rtl ? 1 : -1, lim = visW * (rtl ? .19 : .22), v = tmp.x * side; if (v > lim) tmp.x = side * (lim + (v - lim) * .2); }
+      // sorted position: riding one of the engine's rings
+      const ring = rings[L], t = time * (.3 + L * .07) * (L % 2 ? -1 : 1) + c.slot * Math.PI * 2 / c.of + L * .6;
+      lane.set(Math.cos(t) * ring.userData.R, Math.sin(t) * ring.userData.R, 0).applyMatrix4(ring.matrixWorld);
+      world.worldToLocal(lane);
+      let op, sc, tiltX = 0, tiltY = 0, tiltZ = 0;
+      if (rwOut) {
+        // rewind: out of the card, then a vortex drags them back in
+        const b = clamp01((rw / .3 - c.oBurst * .5) / .6);
+        const v = eio(seg(rw, .28 + c.oBurst * .12, .5));
+        const out = eback(b) * 1.35 * (1 - v), sw = v * 2.8;
+        const x = tmp.x * out, y = tmp.y * out;
+        c.mesh.position.set(x * Math.cos(sw) - y * Math.sin(sw), x * Math.sin(sw) + y * Math.cos(sw), tmp.z * out + v * .3);
+        op = b > 0 ? 1 - seg(v, .75, 1) : 0; sc = c.sc * (.3 + .7 * Math.min(1, b * 1.5)) * (1 - v * .8);
+      } else {
+        // front-layer scraps leave through the face of the card, back-layer ones spill from its edges
+        const from = (c.layer > 0 ? new Vector3(0, 0, .2) : new Vector3(Math.sign(Math.cos(c.ang)) * 1.3, 0, card.position.z - .45)).lerp(tmp, es).lerp(lane, ko);
+        if (ka > 0) {
+          // run-up: swing out to a circle half the screen wide, then accelerate into the result
+          const ang = c.bigAng + ka * 1.15 + kb * .8;   // a shorter arc: less distance per second (§30)
+          big.set(Math.cos(ang) * rx, cy + Math.sin(ang) * ry, .35);
+          from.lerp(big, ka);
+          if (kb > 0) {
+            if (c.stick >= 0) slotAt(results[L], c.stick, dest).z += .08;
+            else dest.copy(results[L].mesh.position);
+            from.lerp(dest, kb);
+          }
+        }
+        op = Math.min(1, e * 6) * (c.stick >= 0 ? 1 - seg(kb, .92, 1) : 1 - seg(kb, .85, 1)) * outFade;
+        sc = c.sc * (.2 + .8 * Math.min(1, e * 2.2)) * (1 - ko * .38) * (1 + ka * .18);
+        if (c.stick >= 0) sc = mix(sc, slotW(results[L], c.stick) / CHW / (narrow ? .9 : 1), kb);
+        else sc *= 1 - seg(kb, .55, 1) * .85;
+        // magnet: lean toward the cursor in its own depth plane
+        if (c.mag > .002) {
+          ray.setFromCamera(mouse, camera);
+          const zw = from.z + world.position.z, tt = (zw - ray.ray.origin.z) / ray.ray.direction.z;
+          tmp2.copy(ray.ray.origin).addScaledVector(ray.ray.direction, tt).sub(world.position);
+          from.lerp(tmp2, c.mag * .8); sc *= 1 + .14 * c.mag; tiltX *= 1 - c.mag;
+        }
+        // a nudged scrap drifts up to you and twitches: "touch me"
+        if (c.nudgeAt >= 0 && c.mode === 'idle') {
+          const pp = (now - c.nudgeAt) / 1600;
+          if (pp >= 1) c.nudgeAt = -1;
+          else { const k = bump(pp); from.lerp(tmp2.set(from.x * .6, from.y * .6, 1.7), k * .75); sc *= 1 + k * .45; tiltZ = Math.sin(pp * 46) * .08 * sstep(.25, .5, pp) * (1 - sstep(.7, .9, pp)); }
+        }
+        // an opened scrap glides to the centre and hands over to the sheet; on close it shatters and re-forms at home
+        if (c.mode !== 'idle') {
+          const el = (now - c.t0) / 1000;
+          if (c.mode === 'opening') {
+            const k = eio(clamp01(el / .6));
+            from.lerp(openPos, k); sc = mix(sc, c.sc * fullScale / c.sc, k); tiltX = 0; tiltY = 0;
+            if (k >= 1) { c.mode = 'open'; c.t0 = now; openSheet(i, entryOf(i), iconFor(c, i), hexOf(POOL[i][0]), APPS[POOL[i][0]].name); }
+          } else if (c.mode === 'open') {
+            from.copy(openPos); sc = fullScale; op = 1 - clamp01(el / .4);
+          } else if (c.mode === 'closing') {
+            if (el < .12) { from.copy(openPos); sc = fullScale; op = 1; }
+            else if (el < .55) {
+              if (!c.shattered) { c.shattered = true; spawn(at.copy(openPos), c.col, 150, 4.2, 1.4, 1.2, .35); }
+              op = 0;
+            } else if (el < 1.05) { const k = seg(el, .55, 1.05); op *= k; sc *= Math.max(.001, eback(k)); }
+            else c.mode = 'idle';
+          }
+        }
+        c.mesh.position.copy(from);
+      }
+      c.mesh.material.opacity = op; c.mesh.visible = op > .01;
+      c.mesh.scale.setScalar(Math.max(.001, sc * (narrow ? .9 : 1)));
+      const stuck = c.stick >= 0 && kb > 0 && !rwOut;
+      c.mesh.renderOrder = c.mode !== 'idle' ? 10 : stuck ? 3 : 0;
+      if (c.mode !== 'idle') c.mesh.rotation.set(0, 0, 0);
+      else if (stuck) { const rr0 = results[L].mesh.rotation; c.mesh.rotation.set(rr0.x * kb, rr0.y * kb, rr0.z * kb); }
+      else { const f = 1 - (c.mag || 0); c.mesh.rotation.set((Math.sin(time * .5 + c.ph) * .08 * (1 - ko) + tiltX) * f, (c.ry * (1 - ko) * (1 - ka) + tiltY) * f, (c.rz * (1 - ko) * (1 - ka) + tiltZ + Math.sin(time * 1.3 + c.ph) * .06 * (1 - e)) * f); }
+    });
+    stepSparks(dt);
+
+    // ── dust
+    if (!reduced) { const p = dg.attributes.position; for (let i = 0; i < ND; i++) { let y = p.getY(i) + dt * .06; if (y > 4.5) y = -4.5; p.setY(i, y); } p.needsUpdate = true; }
+    dust.position.x = world.position.x * .3;
+
+    renderer.render(scene, camera);
+    requestAnimationFrame(frame);
+  }
+  // warm-up: draw everything once off screen, so the burst doesn't pay for shaders and 28 textures
+  // on its first frame (a 66 ms hitch right at the explosion)
+  {
+    const shown = [];
+    scene.traverse(o => { if (!o.visible) { shown.push(o); o.visible = true; } });
+    const rt = new THREE.WebGLRenderTarget(64, 64);
+    renderer.setRenderTarget(rt); renderer.render(scene, camera); renderer.setRenderTarget(null);
+    rt.dispose(); shown.forEach(o => { o.visible = false; });
+  }
+  requestAnimationFrame(frame);
+
+  return {
+    relang() {
+      results.forEach(r => { r.paint(); r.t.needsUpdate = true; });
+      chips.forEach((c, i) => { paintChip(c.cv.getContext('2d'), i); c.t.needsUpdate = true; });
+    }
+  };
+}
+})();
+</script>
